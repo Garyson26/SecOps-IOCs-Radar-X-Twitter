@@ -113,7 +113,7 @@ const Footer = () => {
   
 
       <div className="border-t border-gray-200 py-10">
-        <p className="text-sm text-gray-500">Copyright &copy; 2021 Wiestell, Inc.</p>
+        <p className="text-sm text-gray-500">COPYRIGHT &copy; 2023, Wiestell Ltd.</p>
       </div>
     </div>
   </footer>

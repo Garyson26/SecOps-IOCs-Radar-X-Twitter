@@ -1,5 +1,6 @@
 import PopularCategories from "@/components/Home/PopularCategories";
 import Navbar from "@/components/Layout/Navbar/Navbar";
+import Head from "next/head";
 import { useState } from "react";
 
 function classNames(...classes) {
@@ -16,6 +17,10 @@ export default function Home() {
   const [selectTab, setselectTabTab] = useState(0);
   return (
     <>
+    <Head>
+      <title>Wiestell Marketplace | Global Marketplace For Designer Fashion, Shoes, Bags, Watches, Perfumes, Cosmetics, and Accessories | Wiestell Marketplace.</title>
+      <meta name="title" content="Wiestell Marketplace | Global Marketplace For Designer Fashion, Shoes, Bags, Watches, Perfumes, Cosmetics, and Accessories | Wiestell Marketplace."/>
+    </Head>
       <div className="relative isolate">
         <div
           className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
