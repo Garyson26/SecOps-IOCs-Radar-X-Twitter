@@ -18,8 +18,6 @@ const categories=[
     {name:" Sell Watch Online" , href:"#"},
     {name:"Sell Appliances Online" , href:"#"},
     {name:" Sell Clothes Online" , href:"#"},
-  
-
 ]
 
 const PopularCategories = () => {

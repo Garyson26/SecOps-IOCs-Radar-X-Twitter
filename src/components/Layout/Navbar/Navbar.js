@@ -14,9 +14,9 @@ function Navbar() {
             <Link href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
               <Image
-                width={100}
-                height={100}
-                src="/assests/Wiestell_Logo.jpg"
+                width={40}
+                height={40}
+                src="/assests/icons/Wiestell_Logo.jpg"
                 alt="logo"
               />
             </Link>
