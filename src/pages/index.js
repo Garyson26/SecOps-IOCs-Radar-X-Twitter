@@ -1,4 +1,6 @@
 import PopularCategories from "@/components/Home/PopularCategories";
+import WhySellOnline from "@/components/Home/WhySellOnline";
+import WhyWiestelli from "@/components/Home/WhyWiestelli";
 import Navbar from "@/components/Layout/Navbar/Navbar";
 import Head from "next/head";
 import { useState } from "react";
@@ -10,7 +12,7 @@ function classNames(...classes) {
 const tabs = [
   { name: "WHY SELL ONLINE", href: "#", current: false },
   { name: "WHY WIESTELLl?", href: "#", current: false },
-  { name: "HOW TO BE A SELLER", href: "#", current: true },
+
 ];
 
 export default function Home() {
@@ -21,7 +23,7 @@ export default function Home() {
       <title>Wiestell Marketplace | Global Marketplace For Designer Fashion, Shoes, Bags, Watches, Perfumes, Cosmetics, and Accessories | Wiestell Marketplace.</title>
       <meta name="title" content="Wiestell Marketplace | Global Marketplace For Designer Fashion, Shoes, Bags, Watches, Perfumes, Cosmetics, and Accessories | Wiestell Marketplace."/>
     </Head>
-      <div className="relative isolate">
+      <div className="relative isolate pt-8">
         <div
           className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
           aria-hidden="true"
@@ -204,6 +206,21 @@ export default function Home() {
                 </button>
               ))}
             </nav>
+          </div>
+          <div className="py-5">
+
+          {
+            selectTab === 0 &&
+          <div>
+            <WhySellOnline />
+          </div>
+          }
+          {
+            selectTab === 1 &&
+          <div>
+          <WhyWiestelli />
+          </div>
+          }
           </div>
         </div>
       </div>

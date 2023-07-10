@@ -58,7 +58,7 @@ const data = [
 
 const WhySellOnline = () => {
   return (
-    <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    <div className="grid gap-6  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
     {
       data.map((item)=>{
         return(
@@ -66,7 +66,7 @@ const WhySellOnline = () => {
       <div key={item.id}>
         <div className="flex py-6 justify-center">
           <span className="text-white block  text-[18px] flex items-center justify-center bg-indigo-600 w-8 h-8  rounded-full">
-            1
+          {item.id}
           </span>
         </div>
         <h2 className="text-gray-800 text-center mb-4 font-semibold text-[20px]">

@@ -42,11 +42,9 @@ const footerNavigation = {
 
 const Footer = () => {
   return (
-    <footer aria-labelledby="footer-heading" className="bg-white ">
-
-    <div className="mx-auto max-w-7xl px-4  sm:px-6 lg:px-8">
-      
-        <div className="grid grid-cols-5 py-8 gap-8">
+    <footer aria-labelledby="footer-heading" className="bg-gray-100 ">
+    <div className="mx-auto max-w-7xl px-4  sm:px-6 lg:px-8">  
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 py-8 gap-8">
             <div>
               <h3 className="text-sm font-medium text-gray-900">Services</h3>
               <ul role="list" className="mt-6 space-y-6">
@@ -109,9 +107,6 @@ const Footer = () => {
             </div>
        
         </div>
-      
-  
-
       <div className="border-t border-gray-200 py-10">
         <p className="text-sm text-gray-500">COPYRIGHT &copy; 2023, Wiestell Ltd.</p>
       </div>
