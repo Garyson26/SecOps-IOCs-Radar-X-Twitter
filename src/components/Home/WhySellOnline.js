@@ -84,7 +84,7 @@ const WhySellOnline = () => {
               <g
                 id="Final"
                 stroke="none"
-                stroke-width="1"
+                strokeWidth="1"
                 fill="none"
                 fill-rule="evenodd"
               >
@@ -112,7 +112,7 @@ const WhySellOnline = () => {
                       ></rect>
                       <polyline
                         id="Path-38"
-                        stroke-linecap="round"
+                        strokeLinecap="round"
                         points="3 5.6278125 4.89473684 7.374375 9 3.88125"
                       ></polyline>
                     </g>

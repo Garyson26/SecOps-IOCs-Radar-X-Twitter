@@ -56,12 +56,12 @@ function Navbar() {
           </div>
           <div className="gap-4 flex md:flex-1 md:justify-end">
             <div className="justify-between flex space-x-4">
-              <a
-                href="#"
+              <Link
+                href="/register"
                 className="text-sm font-semibold leading-6 text-gray-900"
               >
                 Start Selling
-              </a>
+              </Link>
               <a
                 href="#"
                 className="text-sm font-semibold leading-6 text-gray-900"
