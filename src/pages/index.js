@@ -23,7 +23,7 @@ export default function Home() {
       <title>Wiestell Marketplace | Global Marketplace For Designer Fashion, Shoes, Bags, Watches, Perfumes, Cosmetics, and Accessories | Wiestell Marketplace.</title>
       <meta name="title" content="Wiestell Marketplace | Global Marketplace For Designer Fashion, Shoes, Bags, Watches, Perfumes, Cosmetics, and Accessories | Wiestell Marketplace."/>
     </Head>
-      <div className="relative isolate pt-8">
+      <div className="relative flex items-center justify-center bg-img min-h-[90vh] isolate pt-8">
         <div
           className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
           aria-hidden="true"

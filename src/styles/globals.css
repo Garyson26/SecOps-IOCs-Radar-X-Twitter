@@ -2,3 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+.bg-img{
+    background-image: url("/assests/PngItem_1546699.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.react-select__input{
+    box-shadow: none !important;
+}

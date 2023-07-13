@@ -62,12 +62,12 @@ function Navbar() {
               >
                 Start Selling
               </Link>
-              <a
-                href="#"
+              <Link
+                href="/login"
                 className="text-sm font-semibold leading-6 text-gray-900"
               >
                 Log in
-              </a>
+              </Link>
             </div>
             <button onClick={() => setOpen(!open)} className="md:hidden">
               <Bars3Icon className="block h-6 w-6" aria-hidden="true" />

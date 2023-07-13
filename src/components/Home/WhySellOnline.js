@@ -86,7 +86,7 @@ const WhySellOnline = () => {
                 stroke="none"
                 strokeWidth="1"
                 fill="none"
-                fill-rule="evenodd"
+                fillRule="evenodd"
               >
                 <g
                   id="Assets"
