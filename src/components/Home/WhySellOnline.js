@@ -77,9 +77,9 @@ const WhySellOnline = () => {
         </p>
         <ul className="mt-4">
         {
-          item.list.map((item)=>{
+          item.list.map((item,index)=>{
             return(
-              <li className=" flex mb-2 items-center gap-3 text-[13px] text-gray-600">
+              <li className=" flex mb-2 items-center gap-3 text-[13px] text-gray-600" key={index}>
             <svg width="12px" viewBox="0 0 12 12">
               <g
                 id="Final"

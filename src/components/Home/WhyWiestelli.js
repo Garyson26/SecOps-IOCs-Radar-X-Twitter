@@ -45,6 +45,7 @@ const WhyWiestelli = () => {
                 className="flex-1"
                 width={80}
                 height={80}
+                alt="Loading..."
               />
             </div>
             <div>
