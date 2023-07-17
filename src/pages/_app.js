@@ -1,11 +1,26 @@
 import Layout from "@/components/Layout/Layout";
 import "@/styles/globals.css";
-import 'react-phone-input-2/lib/style.css'
+import "react-phone-input-2/lib/style.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import { useRouter } from "next/router";
+import AdminLayout from "@/components/AdminLayout/Layout";
 export default function App({ Component, pageProps }) {
+  const router = useRouter();
+  
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <>
+      {router.pathname === "/login" ||
+      router.pathname === "/register" ||
+      router.pathname === "/aboutus" ||
+      router.pathname === "/" ? (
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      ) : (
+        <AdminLayout>
+          <Component {...pageProps} />
+        </AdminLayout>
+      )}
+    </>
   );
 }

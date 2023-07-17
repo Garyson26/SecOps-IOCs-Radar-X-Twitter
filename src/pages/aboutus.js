@@ -1,6 +1,6 @@
 import React from "react";
 
-function aboutus() {
+function Aboutus() {
   return (
     <>
       <div
@@ -13,7 +13,7 @@ function aboutus() {
           className="absolute top-0 w-full h-full bg-center bg-cover"
           style={{
             backgroundImage:
-              "url('/assests/aboutusBackground.jpeg')",
+              "url('/assets/aboutusBackground.jpeg')",
           }}
         >
           <span
@@ -159,7 +159,7 @@ function aboutus() {
               <img
                 alt="..."
                 className="max-w-full rounded-lg shadow-lg"
-                src="/assests/aboutussideimage.jpeg"
+                src="/assets/aboutussideimage.jpeg"
               />
             </div>
             <div className="w-full md:w-5/12 ml-auto mr-auto px-4">
@@ -225,4 +225,4 @@ function aboutus() {
   );
 }
 
-export default aboutus;
+export default Aboutus;

@@ -5,25 +5,25 @@ import React from "react";
 const selling = [
   {
     title: "Growth",
-    icon: "/assests/icons/GrowthSellIcon.svg",
+    icon: "/assets/icons/GrowthSellIcon.svg",
     detail:
       "Widen your reach to a customer base of 1 billion and grow your online business further with the support of Account Managers.",
   },
   {
     title: "Lowest cost of doing business",
-    icon: "/assests/icons/CostSellIcon.svg",
+    icon: "/assets/icons/CostSellIcon.svg",
     detail:
       "Along with the most competitive rate card in the industry you also get on-time and reliable payments.",
   },
   {
     title: "Ease",
-    icon: "/assests/icons/EasySellIcon.svg",
+    icon: "/assets/icons/EasySellIcon.svg",
     detail:
       "You just need 1 product and 2 documents to start selling online on Flipkart.",
   },
   {
     title: "Transparency",
-    icon: "/assests/icons/TransparencySellIcon.svg",
+    icon: "/assets/icons/TransparencySellIcon.svg",
     detail: "Equal opportunities for all the sellers to grow.",
   },
 ];

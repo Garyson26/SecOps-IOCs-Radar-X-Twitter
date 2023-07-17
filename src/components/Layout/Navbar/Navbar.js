@@ -23,7 +23,7 @@ function Navbar() {
               <Image
                 width={40}
                 height={40}
-                src="/assests/icons/Wiestell_Logo.jpg"
+                src="/assets/icons/Wiestell_Logo.jpg"
                 alt="logo"
               />
             </Link>
