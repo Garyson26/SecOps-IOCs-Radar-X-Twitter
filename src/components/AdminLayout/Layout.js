@@ -8,7 +8,7 @@ const AdminLayout = ({ children }) => {
   return (
     <div>
       <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen}/>
-      <div className="lg:pl-72">
+      <div className="lg:pl-72 bg-light">
         <Header sidebarOpe={sidebarOpen} setSidebarOpen={setSidebarOpen}/>
         <main className="">
         {children}

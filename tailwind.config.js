@@ -22,6 +22,9 @@ module.exports = {
           'box-gradient4':'linear-gradient(315deg, #ffb72c 0%, #f57f59 74%)',
 
       },
+      colors: {
+        'light': '#f2f3f8',
+      },
     },
   },
   plugins: [
