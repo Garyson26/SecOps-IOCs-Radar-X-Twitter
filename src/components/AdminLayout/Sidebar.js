@@ -21,9 +21,10 @@ import { FaCartFlatbed } from "react-icons/fa6";
 import { HiOutlineCash, HiOutlineQuestionMarkCircle } from "react-icons/hi";
 import { TbReceiptRefund } from "react-icons/tb";
 import { LiaAtomSolid } from "react-icons/lia";
+import Link from "next/link";
 
 const navigation = [
-  { name: "Dashboard", href: "#", icon: BiHome, current: true },
+  { name: "Dashboard", href: "/dashboard", icon: BiHome, current: true },
   {
     name: "Product",
     subproduct: [
@@ -43,6 +44,7 @@ const navigation = [
         current: true,
       },
     ],
+    href: "#",
     icon: ShoppingCartIcon,
     current: false,
   },
@@ -157,7 +159,7 @@ const Sidebar = ({ setSidebarOpen, sidebarOpen }) => {
                         <ul role="list" className="-mx-2 space-y-1">
                           {navigation.map((item) => (
                             <li key={item.name}>
-                              <a
+                              <Link
                                 href={item.href}
                                 className={classNames(
                                   item.current
@@ -171,7 +173,7 @@ const Sidebar = ({ setSidebarOpen, sidebarOpen }) => {
                                   aria-hidden="true"
                                 />
                                 {item.name}
-                              </a>
+                              </Link>
                             </li>
                           ))}
                         </ul>
@@ -201,13 +203,13 @@ const Sidebar = ({ setSidebarOpen, sidebarOpen }) => {
       <div className="hidden lg:fixed lg:inset-y-0  lg:z-50 lg:flex lg:w-72 lg:flex-col">
         {/* Sidebar component, swap this element with another sidebar if you like */}
         <div className="flex grow flex-col gap-y-5 overflow-y-auto custom-scroll bg-gray-900 px-6 pb-4">
-          <div className="flex h-16 shrink-0 items-center justify-center">
+          <Link href='/dashboard'  className="flex h-16 shrink-0 items-center justify-center">
             <img
               className="h-7 w-auto"
               src="/assets/icons/LogoWHite.png"
               alt="Your Company"
             />
-          </div>
+          </Link>
           <div>
             <input
               placeholder="Search in menu"
@@ -220,7 +222,7 @@ const Sidebar = ({ setSidebarOpen, sidebarOpen }) => {
                 <ul role="list" className="-mx-2 space-y-1">
                   {navigation.map((item) => (
                     <li key={item.name}>
-                      <a
+                      <Link
                         href={item.href}
                         className={classNames(
                           item.current
@@ -234,7 +236,7 @@ const Sidebar = ({ setSidebarOpen, sidebarOpen }) => {
                           aria-hidden="true"
                         />
                         {item.name}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>

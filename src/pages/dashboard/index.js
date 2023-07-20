@@ -1,7 +1,7 @@
 import ProducatChart from "@/components/Dashboard/ProducatChart";
 import ProducatSaleChart from "@/components/Dashboard/ProducatSaleChart";
 import ProductPie from "@/components/Dashboard/ProductDoughnut";
-// import Top12Producat from "@/components/Dashboard/Top12Producat";
+import Top12Producat from "@/components/Dashboard/Top12Producat";
 import React from "react";
 
 const Dashboard = () => {
@@ -103,9 +103,9 @@ const Dashboard = () => {
         </div>
       </div>
 
-      {/* <div className="px-8 ">
+      <div className="px-8 ">
         <Top12Producat />
-      </div> */}
+      </div>
     </div>
   );
 };

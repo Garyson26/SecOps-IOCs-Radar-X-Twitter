@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 function profile() {
@@ -51,6 +52,14 @@ function profile() {
                                     </div>
                                 </div>
                                 <div className="w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center">
+                                    <div class="py-6 px-3 mt-32 sm:mt-0">
+                                        <Link href='/editProfile'> 
+                                        
+                                        <button class="bg-pink-500 active:bg-pink-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 ease-linear transition-all duration-150" type="button">
+                                            Edit Profile
+                                        </button>
+                                        </Link>
+                                    </div>
                                 </div>
                                 <div className="w-full lg:w-4/12 px-4 lg:order-1">
                                     <div className="flex justify-center py-4 lg:pt-4 pt-8">
@@ -67,7 +76,7 @@ function profile() {
                                 </div>
                                 <div className="mb-2 text-blueGray-600 mt-10">
                                     <i className="fas fa-briefcase mr-2 text-lg text-blueGray-400"></i>
-                                     Manager - Creative wiestell store
+                                    Manager - Creative wiestell store
                                 </div>
                             </div>
                             <div className="mt-10 py-10 border-t border-blueGray-200 text-center">

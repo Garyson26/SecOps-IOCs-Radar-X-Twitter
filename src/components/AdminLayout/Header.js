@@ -3,6 +3,7 @@ import { BellIcon } from "@heroicons/react/24/outline";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { Menu, Transition } from "@headlessui/react";
 import { CgMenuLeft } from "react-icons/cg";
+import Link from "next/link";
 const userNavigation = [
   { name: "Your profile", href: "/profile" },
   { name: "Sign out", href: "#" },
@@ -75,7 +76,7 @@ const Header = ({ setSidebarOpen }) => {
                 {userNavigation.map((item) => (
                   <Menu.Item key={item.name}>
                     {({ active }) => (
-                      <a
+                      <Link
                         href={item.href}
                         className={classNames(
                           active ? "bg-gray-50" : "",
@@ -83,7 +84,7 @@ const Header = ({ setSidebarOpen }) => {
                         )}
                       >
                         {item.name}
-                      </a>
+                      </Link>
                     )}
                   </Menu.Item>
                 ))}
