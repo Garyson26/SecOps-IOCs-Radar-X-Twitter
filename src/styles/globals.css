@@ -45,3 +45,26 @@
     -webkit-box-orient: vertical;
   }
 }
+
+.custom-select__input{
+  outline: none !important;
+  box-shadow: none  !important;
+}
+.custom-select__control{
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-color: #dad7d7;
+  box-shadow: none  !important;
+
+}
+.custom-select__placeholder {
+color: #aeaeae;
+font-size: 14px;
+}
+.custom-select__value-container{
+  padding-left: 14px !important;
+  color: #9c9c9c !important;
+}
+.custom-select__indicator-separator {
+  display: none;
+}

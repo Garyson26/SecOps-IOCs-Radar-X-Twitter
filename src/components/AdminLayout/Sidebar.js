@@ -1,16 +1,9 @@
 import React, { Fragment, useState } from "react";
 import { Dialog, Menu, Transition } from "@headlessui/react";
 import {
-  Bars3Icon,
-  BellIcon,
-  CalendarIcon,
-  ChartPieIcon,
+  ArrowDownIcon,
   Cog6ToothIcon,
-  DocumentDuplicateIcon,
-  FolderIcon,
-  HomeIcon,
   ShoppingCartIcon,
-  UsersIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import { RiCoupon3Line, RiSettings4Line, RiHistoryFill } from "react-icons/ri";
@@ -22,15 +15,17 @@ import { HiOutlineCash, HiOutlineQuestionMarkCircle } from "react-icons/hi";
 import { TbReceiptRefund } from "react-icons/tb";
 import { LiaAtomSolid } from "react-icons/lia";
 import Link from "next/link";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
 const navigation = [
   { name: "Dashboard", href: "/dashboard", icon: BiHome, current: true },
   {
     name: "Product",
+    href: "/products/create",
     subproduct: [
       {
-        name: "Product",
-        href: "#",
+        name: "Add New products",
+        href: "/create",
         current: true,
       },
       {
@@ -44,7 +39,6 @@ const navigation = [
         current: true,
       },
     ],
-    href: "#",
     icon: ShoppingCartIcon,
     current: false,
   },
@@ -157,8 +151,8 @@ const Sidebar = ({ setSidebarOpen, sidebarOpen }) => {
                     <ul role="list" className="flex flex-1 flex-col gap-y-7">
                       <li>
                         <ul role="list" className="-mx-2 space-y-1">
-                          {navigation.map((item) => (
-                            <li key={item.name}>
+                          {navigation.map((item , index) => (
+                            <li key={item.index}>
                               <Link
                                 href={item.href}
                                 className={classNames(
@@ -180,7 +174,7 @@ const Sidebar = ({ setSidebarOpen, sidebarOpen }) => {
                       </li>
 
                       <li className="mt-auto">
-                        <a
+                        <Link
                           href="#"
                           className="group -mx-2 flex items-center gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-400 hover:bg-gray-800 hover:text-white"
                         >
@@ -189,7 +183,7 @@ const Sidebar = ({ setSidebarOpen, sidebarOpen }) => {
                             aria-hidden="true"
                           />
                           Settings
-                        </a>
+                        </Link>
                       </li>
                     </ul>
                   </nav>
@@ -203,7 +197,10 @@ const Sidebar = ({ setSidebarOpen, sidebarOpen }) => {
       <div className="hidden lg:fixed lg:inset-y-0  lg:z-50 lg:flex lg:w-72 lg:flex-col">
         {/* Sidebar component, swap this element with another sidebar if you like */}
         <div className="flex grow flex-col gap-y-5 overflow-y-auto custom-scroll bg-gray-900 px-6 pb-4">
-          <Link href='/dashboard'  className="flex h-16 shrink-0 items-center justify-center">
+          <Link
+            href="/dashboard"
+            className="flex h-16 shrink-0 items-center justify-center"
+          >
             <img
               className="h-7 w-auto"
               src="/assets/icons/LogoWHite.png"
@@ -220,25 +217,55 @@ const Sidebar = ({ setSidebarOpen, sidebarOpen }) => {
             <ul role="list" className="flex flex-1 flex-col gap-y-7">
               <li>
                 <ul role="list" className="-mx-2 space-y-1">
-                  {navigation.map((item) => (
-                    <li key={item.name}>
-                      <Link
-                        href={item.href}
-                        className={classNames(
-                          item.current
-                            ? "bg-gray-800  text-white font-semibold"
-                            : "text-gray-400 hover:text-white hover:font-semibold hover:bg-gray-800",
-                          "group flex gap-x-3 items-center rounded-md p-2 text-sm transition duration-500 leading-6 "
-                        )}
-                      >
-                        <item.icon
-                          className="h-4 w-4 shrink-0"
-                          aria-hidden="true"
-                        />
-                        {item.name}
-                      </Link>
-                    </li>
-                  ))}
+                  {navigation.map((item) => {
+                    return (
+                      
+                        <li
+                          key={item.name}
+                          className={classNames(
+                            item.current
+                              ? "bg-gray-800  text-white font-semibold"
+                              : "text-gray-400 hover:text-white hover:font-semibold hover:bg-gray-800",
+                            "group flex gap-x-3 items-center rounded-md p-2 text-sm transition duration-500 leading-6 "
+                          )}
+                        >
+                          <Link
+                            href={item.href}
+                            className="flex flex-1 items-center gap-x-3"
+                          >
+                            <item.icon
+                              className="h-4 w-4 shrink-0"
+                              aria-hidden="true"
+                            />
+                            {item.name}
+                          </Link>
+                          {/* {item.subproduct && (
+                            <ChevronDownIcon className=" h-4 w-4  text-white  " />
+                          )} */}
+                        </li>
+                      
+                    );
+                  })}
+                        {/* <div   key={item.name}>
+                          {item.subproduct?.map((item, index) => {
+                            return (
+                              <li
+                                className={classNames(
+                                  item.current
+                                    ? "bg-gray-800  text-white font-semibold"
+                                    : "text-gray-400 hover:text-white hover:font-semibold hover:bg-gray-800",
+                                  "group flex gap-x-3 items-center rounded-md p-2 pl-7 text-sm transition duration-500 leading-6 "
+                                )}
+                                key={index}
+                              >
+                                <span className="border rounded-full border-gray-300 block w-1.5 h-1.5">
+
+                                </span>
+                                <Link href={item.href}>{item.name}</Link>
+                              </li>
+                            );
+                          })}
+                        </div> */}
                 </ul>
               </li>
 

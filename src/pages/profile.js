@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 
-function profile() {
+function Profile() {
     return (
         <>
             <section className="relative block h-[500px]">
@@ -104,4 +104,4 @@ function profile() {
     )
 }
 
-export default profile
+export default Profile
