@@ -223,7 +223,7 @@ const Create = () => {
             </div>
             <div className=" bg-white rounded">
               <h2 className="text-gray-800 px-[25px] py-3 border-b font-medium text-[20px]">
-                Product Information
+                Product Image
               </h2>
               <div className="py-[28px] flex flex-col gap-5">
                 <ProductImages />
