@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 function Aboutus() {
@@ -120,13 +121,13 @@ function Aboutus() {
                 satisfaction. Join us and discover the joy of working with a
                 passionate and dedicated team at Wiestell.com.
               </p>
-              <a
+              <Link
                 href="https://wiestell.com"
                 className="font-bold text-gray-800 mt-8"
                 target="_blank"
               >
                 Check Wiestell!
-              </a>
+              </Link>
             </div>
 
             <div className="w-full md:w-4/12 px-4 mr-auto ml-auto">

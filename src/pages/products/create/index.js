@@ -34,11 +34,11 @@ const Create = () => {
         event.preventDefault();
     }
   };
-  const options = [
-    { value: "chocolate", label: "Chocolate" },
-    { value: "strawberry", label: "Strawberry" },
-    { value: "vanilla", label: "Vanilla" },
-  ];
+    const options = [
+      { value: "chocolate", label: "Chocolate" },
+      { value: "strawberry", label: "Strawberry" },
+      { value: "vanilla", label: "Vanilla" },
+    ];
   return (
     <div className="py-8 font-poppins">
       <div className="px-4 sm:px-6 mb-8 lg:px-8">

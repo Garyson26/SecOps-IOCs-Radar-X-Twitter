@@ -16,6 +16,7 @@ import { TbReceiptRefund } from "react-icons/tb";
 import { LiaAtomSolid } from "react-icons/lia";
 import Link from "next/link";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import { useRouter } from "next/router";
 
 const navigation = [
   { name: "Dashboard", href: "/dashboard", icon: BiHome, current: true },
@@ -25,7 +26,7 @@ const navigation = [
     subproduct: [
       {
         name: "Add New products",
-        href: "/create",
+        href: "/products/create",
         current: true,
       },
       {
@@ -43,14 +44,14 @@ const navigation = [
     current: false,
   },
 
-  { name: "Coupon", href: "#", icon: RiCoupon3Line, current: false },
+  { name: "Coupon", href: "/coupon", icon: RiCoupon3Line, current: false },
   {
     name: "Wholesale Products",
     href: "#",
     icon: FaCartFlatbed,
     current: false,
   },
-  { name: "Orders", href: "#", icon: HiOutlineCash, current: false },
+  { name: "Orders", href: "/order", icon: HiOutlineCash, current: false },
   {
     name: "Received Refund Request",
     href: "#",
@@ -84,6 +85,7 @@ function classNames(...classes) {
 }
 
 const Sidebar = ({ setSidebarOpen, sidebarOpen }) => {
+  const router = useRouter();
   return (
     <div>
       <Transition.Root show={sidebarOpen} as={Fragment}>
@@ -151,12 +153,12 @@ const Sidebar = ({ setSidebarOpen, sidebarOpen }) => {
                     <ul role="list" className="flex flex-1 flex-col gap-y-7">
                       <li>
                         <ul role="list" className="-mx-2 space-y-1">
-                          {navigation.map((item , index) => (
+                          {navigation.map((item, index) => (
                             <li key={item.index}>
                               <Link
                                 href={item.href}
                                 className={classNames(
-                                  item.current
+                                  item.href === router.pathname
                                     ? "bg-gray-800  text-white font-semibold"
                                     : "text-gray-400 hover:text-white hover:font-semibold hover:bg-gray-800",
                                   "group flex gap-x-3 items-center rounded-md p-2 text-sm transition duration-500 leading-6 "
@@ -196,21 +198,21 @@ const Sidebar = ({ setSidebarOpen, sidebarOpen }) => {
       {/* Static sidebar for desktop */}
       <div className="hidden lg:fixed lg:inset-y-0  lg:z-50 lg:flex lg:w-72 lg:flex-col">
         {/* Sidebar component, swap this element with another sidebar if you like */}
-        <div className="flex grow flex-col gap-y-5 overflow-y-auto custom-scroll bg-gray-900 px-6 pb-4">
+        <div className="flex grow flex-col gap-y-5 overflow-y-auto custom-scroll bg-white px-6 pb-4">
           <Link
             href="/dashboard"
             className="flex h-16 shrink-0 items-center justify-center"
           >
             <img
               className="h-7 w-auto"
-              src="/assets/icons/LogoWHite.png"
+              src="/assets/icons/Wiestell Logo.png"
               alt="Your Company"
             />
           </Link>
           <div>
             <input
               placeholder="Search in menu"
-              className="rounded text-gray-300 focus:outline-none ring-0 focus:ring-0 bg-gray-800 w-full"
+              className="rounded text-gray-300 focus:outline-none ring-0 focus:ring-0 bg-gray-200 w-full"
             />
           </div>
           <nav className="flex flex-1 flex-col">
@@ -219,14 +221,14 @@ const Sidebar = ({ setSidebarOpen, sidebarOpen }) => {
                 <ul role="list" className="-mx-2 space-y-1">
                   {navigation.map((item) => {
                     return (
-                      
+                      <>
                         <li
                           key={item.name}
                           className={classNames(
-                            item.current
-                              ? "bg-gray-800  text-white font-semibold"
-                              : "text-gray-400 hover:text-white hover:font-semibold hover:bg-gray-800",
-                            "group flex gap-x-3 items-center rounded-md p-2 text-sm transition duration-500 leading-6 "
+                            item.href === router.pathname
+                              ? "bg-gray-200 font-semibold"
+                              : "text-gray-800 hover:font-semibold hover:bg-gray-100",
+                            "group  flex gap-x-3 items-center rounded-md p-2 text-sm transition duration-500 leading-6 "
                           )}
                         >
                           <Link
@@ -243,43 +245,49 @@ const Sidebar = ({ setSidebarOpen, sidebarOpen }) => {
                             <ChevronDownIcon className=" h-4 w-4  text-white  " />
                           )} */}
                         </li>
-                      
-                    );
-                  })}
-                        {/* <div   key={item.name}>
-                          {item.subproduct?.map((item, index) => {
-                            return (
+
+                        {item.subproduct?.map((item, index) => {
+                          return (
+                            <div key={item.name}>
                               <li
                                 className={classNames(
-                                  item.current
-                                    ? "bg-gray-800  text-white font-semibold"
-                                    : "text-gray-400 hover:text-white hover:font-semibold hover:bg-gray-800",
+                                  item.href === router.pathname
+                                    ? "bg-gray-200  text-gray-800 font-semibold"
+                                    : "text-gray-800 hover:text-gray-800 hover:font-semibold hover:bg-gray-100",
                                   "group flex gap-x-3 items-center rounded-md p-2 pl-7 text-sm transition duration-500 leading-6 "
                                 )}
                                 key={index}
                               >
-                                <span className="border rounded-full border-gray-300 block w-1.5 h-1.5">
-
-                                </span>
+                                <span
+                                  className={classNames(
+                                    item.href === router.pathname
+                                      ? "bg-gray-800"
+                                      : "",
+                                    "border rounded-full border-gray-300 block w-1.5 h-1.5"
+                                  )}
+                                ></span>
                                 <Link href={item.href}>{item.name}</Link>
                               </li>
-                            );
-                          })}
-                        </div> */}
+                            </div>
+                          );
+                        })}
+                      </>
+                    );
+                  })}
                 </ul>
               </li>
 
               <li className="mt-auto">
-                <a
+                <Link
                   href="#"
-                  className="group -mx-2 items-center flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-400 hover:bg-gray-800 hover:text-white"
+                  className="group -mx-2 items-center flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-800 hover:bg-gray-200 hover:text-gray-800"
                 >
                   <Cog6ToothIcon
                     className="h-4 w-4 shrink-0"
                     aria-hidden="true"
                   />
                   Settings
-                </a>
+                </Link>
               </li>
             </ul>
           </nav>

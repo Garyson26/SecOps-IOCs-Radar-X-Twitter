@@ -85,12 +85,12 @@ function Profile() {
                                         <p className="mb-4 text-lg leading-relaxed text-blueGray-700">
                                             Welcome to the Admin Profile Section! As an administrator, you have access to powerful tools and controls to manage the platform efficiently. Update your personal information, monitor user activity, configure settings, and oversee critical aspects of the system.
                                         </p>
-                                        <a
+                                        <Link
                                             href="#"
                                             className="font-normal text-pink-500"
                                         >
                                             Show more
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>

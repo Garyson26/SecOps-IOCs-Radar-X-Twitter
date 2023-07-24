@@ -41,18 +41,18 @@ function Navbar() {
             >
               Services
             </Link>
-            <a
+            <Link
               href="#"
               className="text-sm font-semibold leading-6 text-gray-900"
             >
               Marketplace
-            </a>
-            <a
+            </Link>
+            <Link
               href="#"
               className="text-sm font-semibold leading-6 text-gray-900"
             >
               Company
-            </a>
+            </Link>
           </div>
           <div className="gap-4 flex md:flex-1 md:justify-end">
             <div className="justify-between flex space-x-4">
@@ -88,18 +88,18 @@ function Navbar() {
             >
               Services
             </Link>
-            <a
+            <Link
               href="#"
               className="text-sm py-3  font-semibold leading-6 text-gray-900"
             >
               Marketplace
-            </a>
-            <a
+            </Link>
+            <Link
               href="#"
               className="text-sm py-3 font-semibold leading-6 text-gray-900"
             >
               Company
-            </a>
+            </Link>
           </div>
         ) : (
           ""
