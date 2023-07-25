@@ -141,11 +141,11 @@ const Sidebar = ({ setSidebarOpen, sidebarOpen }) => {
                   </div>
                 </Transition.Child>
                 {/* Sidebar component, swap this element with another sidebar if you like */}
-                <div className="flex grow flex-col gap-y-5 custom-scroll overflow-y-auto bg-gray-900 px-6 pb-4 ring-1 ring-white/10">
+                <div className="flex grow flex-col gap-y-5 custom-scroll overflow-y-auto bg-white px-6 pb-4 ring-1 ring-white/10">
                   <div className="flex h-16 shrink-0 items-center justify-center">
                     <img
                       className="h-8 w-auto"
-                      src="/assets/icons/LogoWHite.png"
+                      src="/assets/icons/Wiestell Logo.png"
                       alt="Your Company"
                     />
                   </div>
@@ -153,25 +153,29 @@ const Sidebar = ({ setSidebarOpen, sidebarOpen }) => {
                     <ul role="list" className="flex flex-1 flex-col gap-y-7">
                       <li>
                         <ul role="list" className="-mx-2 space-y-1">
-                          {navigation.map((item, index) => (
-                            <li key={item.index}>
-                              <Link
-                                href={item.href}
-                                className={classNames(
-                                  item.href === router.pathname
-                                    ? "bg-gray-800  text-white font-semibold"
-                                    : "text-gray-400 hover:text-white hover:font-semibold hover:bg-gray-800",
-                                  "group flex gap-x-3 items-center rounded-md p-2 text-sm transition duration-500 leading-6 "
-                                )}
-                              >
-                                <item.icon
-                                  className="h-4 w-4 shrink-0"
-                                  aria-hidden="true"
-                                />
-                                {item.name}
-                              </Link>
-                            </li>
-                          ))}
+                            {navigation.map((item, index) => {
+                              return (
+                                <li key={index}>
+                                  <Link
+                                    href={item.href}
+                                    className={classNames(
+                                      item.href === router.pathname
+                                        ? "bg-gray-200 font-semibold"
+                                        : "text-gray-800 hover:font-semibold hover:bg-gray-100",
+                                      "group flex gap-x-3 items-center rounded-md p-2 text-sm transition duration-500 leading-6 "
+                                    )}
+                                    onClick={() => setSidebarOpen(false)}
+                                  >
+                                    <item.icon
+                                      className="h-4 w-4 shrink-0"
+                                      aria-hidden="true"
+                                    />
+                                    {item.name}
+                                  </Link>
+                                </li>
+                              )
+                            }
+                            )}
                         </ul>
                       </li>
 
@@ -221,9 +225,8 @@ const Sidebar = ({ setSidebarOpen, sidebarOpen }) => {
                 <ul role="list" className="-mx-2 space-y-1">
                   {navigation.map((item) => {
                     return (
-                      <>
+                      <React.Fragment key={item.name}>
                         <li
-                          key={item.name}
                           className={classNames(
                             item.href === router.pathname
                               ? "bg-gray-200 font-semibold"
@@ -271,7 +274,7 @@ const Sidebar = ({ setSidebarOpen, sidebarOpen }) => {
                             </div>
                           );
                         })}
-                      </>
+                      </React.Fragment>
                     );
                   })}
                 </ul>
