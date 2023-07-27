@@ -59,8 +59,8 @@ const navigation = [
     current: false,
   },
   { name: "Shop Setting", href: "#", icon: RiSettings4Line, current: false },
-  { name: "Payment History", href: "#", icon: RiHistoryFill, current: false },
-  { name: "Money Withdraw", href: "#", icon: GiMoneyStack, current: false },
+  { name: "Payment History", href: "/payment", icon: RiHistoryFill, current: false },
+  { name: "Money Withdraw", href: "/moneywithdraw", icon: GiMoneyStack, current: false },
   { name: "Conversations", href: "#", icon: TbMessage2, current: false },
   {
     name: "Product Queries",
