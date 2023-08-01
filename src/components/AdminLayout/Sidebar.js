@@ -21,9 +21,14 @@ import { useRouter } from "next/router";
 const navigation = [
   { name: "Dashboard", href: "/dashboard", icon: BiHome, current: true },
   {
-    name: "Product",
+    name: "Catalog",
     href: "/products/create",
     subproduct: [
+      {
+        name: "Products",
+        href: "/product",
+        current: true,
+      },
       {
         name: "Add New products",
         href: "/products/create",
@@ -51,7 +56,7 @@ const navigation = [
     icon: FaCartFlatbed,
     current: false,
   },
-  { name: "Orders", href: "/order", icon: HiOutlineCash, current: false },
+  { name: "Orders", href: "/orders", icon: HiOutlineCash, current: false },
   {
     name: "Received Refund Request",
     href: "#",
