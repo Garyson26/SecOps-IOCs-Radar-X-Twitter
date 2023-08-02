@@ -2,6 +2,7 @@ import React, { Fragment, useState } from "react";
 import { Dialog, Menu, Transition } from "@headlessui/react";
 import {
   ArrowDownIcon,
+  ChevronUpIcon,
   Cog6ToothIcon,
   ShoppingCartIcon,
   XMarkIcon,
@@ -17,12 +18,44 @@ import { LiaAtomSolid } from "react-icons/lia";
 import Link from "next/link";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { useRouter } from "next/router";
+import { FaShippingFast } from "react-icons/fa";
 
 const navigation = [
   { name: "Dashboard", href: "/dashboard", icon: BiHome, current: true },
   {
+    name: "Orders", href: "/orders", icon: HiOutlineCash,
+    subproduct: [
+      {
+        name: "Orders",
+        href: "/orders",
+        current: true,
+      },
+      {
+        name: "Invoices",
+        href: "#",
+        current: true,
+      },
+      {
+        name: "Credit Slips",
+        href: "#",
+        current: true,
+      },
+      {
+        name: "Delivery Slips",
+        href: "#",
+        current: true,
+      },
+      {
+        name: "Shopping Carts",
+        href: "#",
+        current: true,
+      }
+    ],
+    current: false
+  },
+  {
     name: "Catalog",
-    href: "/products/create",
+    href: "/product",
     subproduct: [
       {
         name: "Products",
@@ -30,17 +63,32 @@ const navigation = [
         current: true,
       },
       {
-        name: "Add New products",
-        href: "/products/create",
-        current: true,
-      },
-      {
-        name: "Product Bulk",
+        name: "Monitoring",
         href: "#",
         current: true,
       },
       {
-        name: "Product Reviews",
+        name: "Attributes & Features",
+        href: "#",
+        current: true,
+      },
+      {
+        name: "Brands & Suppliers",
+        href: "#",
+        current: true,
+      },
+      {
+        name: "Files",
+        href: "#",
+        current: true,
+      },
+      {
+        name: "Discounts",
+        href: "#",
+        current: true,
+      },
+      {
+        name: "Stock",
         href: "#",
         current: true,
       },
@@ -49,24 +97,39 @@ const navigation = [
     current: false,
   },
 
-  { name: "Coupon", href: "/coupon", icon: RiCoupon3Line, current: false },
+  { name: "Promotion", href: "/coupon", icon: RiCoupon3Line, current: false },
   {
     name: "Wholesale Products",
     href: "#",
     icon: FaCartFlatbed,
     current: false,
   },
-  { name: "Orders", href: "/orders", icon: HiOutlineCash, current: false },
   {
-    name: "Received Refund Request",
+    name: "Shipping",
+    href: "#",
+    subproduct: [
+      {
+        name: "Carriers",
+        href: "#",
+        current: true,
+      },
+      {
+        name: "Preferences",
+        href: "#",
+        current: true,
+      }
+    ],
+    icon: FaShippingFast,
+    current: false,
+  },
+  {
+    name: "Exange and Refund Request",
     href: "#",
     icon: TbReceiptRefund,
     current: false,
   },
-  { name: "Shop Setting", href: "#", icon: RiSettings4Line, current: false },
   { name: "Payment History", href: "/payment", icon: RiHistoryFill, current: false },
-  { name: "Money Withdraw", href: "/moneywithdraw", icon: GiMoneyStack, current: false },
-  { name: "Conversations", href: "#", icon: TbMessage2, current: false },
+  // { name: "Money Withdraw", href: "/moneywithdraw", icon: GiMoneyStack, current: false },
   {
     name: "Product Queries",
     href: "#",
@@ -91,6 +154,16 @@ function classNames(...classes) {
 
 const Sidebar = ({ setSidebarOpen, sidebarOpen }) => {
   const router = useRouter();
+  const [activeMenuItem, setActiveMenuItem] = useState(null);
+
+  const handleMenuClick = (index) => {
+    if (activeMenuItem === index) {
+      setActiveMenuItem(null);
+    } else {
+      setActiveMenuItem(index);
+    }
+  };
+
   return (
     <div>
       <Transition.Root show={sidebarOpen} as={Fragment}>
@@ -158,29 +231,61 @@ const Sidebar = ({ setSidebarOpen, sidebarOpen }) => {
                     <ul role="list" className="flex flex-1 flex-col gap-y-7">
                       <li>
                         <ul role="list" className="-mx-2 space-y-1">
-                            {navigation.map((item, index) => {
-                              return (
-                                <li key={index}>
-                                  <Link
-                                    href={item.href}
-                                    className={classNames(
-                                      item.href === router.pathname
-                                        ? "bg-gray-200 font-semibold"
-                                        : "text-gray-800 hover:font-semibold hover:bg-gray-100",
-                                      "group flex gap-x-3 items-center rounded-md p-2 text-sm transition duration-500 leading-6 "
-                                    )}
-                                    onClick={() => setSidebarOpen(false)}
-                                  >
-                                    <item.icon
-                                      className="h-4 w-4 shrink-0"
-                                      aria-hidden="true"
-                                    />
-                                    {item.name}
-                                  </Link>
-                                </li>
-                              )
-                            }
-                            )}
+                          {navigation.map((item, index) => {
+                            return (
+                              <React.Fragment key={index}>
+                                <li key={index} className={classNames(
+      item.href === router.pathname
+        ? "bg-gray-200 font-semibold"
+        : "text-gray-800 hover:font-semibold hover:bg-gray-100","flex justify-between items-baseline" )}  onClick={() => handleMenuClick(index)}> 
+  <Link
+    href={item.href}
+    className=
+      "group flex gap-x-3 items-center rounded-md p-2 text-sm transition duration-500 leading-6 "
+    
+  
+  >
+    <item.icon
+      className="h-4 w-4 shrink-0"
+      aria-hidden="true"
+    />
+    {item.name}
+  </Link>
+  {item.subproduct && (
+    activeMenuItem === index ? (
+      <ChevronUpIcon className="h-4 w-4  text-gray-400" />
+    ) : (
+      <ChevronDownIcon className="h-4 w-4  text-gray-400" />
+    )
+  )}
+</li>
+
+
+                                {activeMenuItem === index && item.subproduct?.map((subItem, subIndex) => (
+                                  <div key={subItem.name}>
+                                    <li
+                                      className={classNames(
+                                        subItem.href === router.pathname
+                                          ? "bg-gray-200  text-gray-800 font-semibold"
+                                          : "text-gray-800 hover:text-gray-800 hover:font-semibold hover:bg-gray-100",
+                                        "group flex gap-x-3 items-center rounded-md p-2 pl-7 text-sm transition duration-500 leading-6 "
+                                      )}
+                                      key={subIndex}
+                                    >
+                                      <span
+                                        className={classNames(
+                                          subItem.href === router.pathname ? "bg-gray-800" : "",
+                                          "border rounded-full border-gray-300 block w-1.5 h-1.5"
+                                        )}
+                                      />
+                                      <Link href={subItem.href}>{subItem.name}</Link>
+                                    </li>
+                                  </div>
+                                ))}
+                              </React.Fragment>
+                            )
+                          }
+                          )}
                         </ul>
                       </li>
 
@@ -228,7 +333,7 @@ const Sidebar = ({ setSidebarOpen, sidebarOpen }) => {
             <ul role="list" className="flex flex-1 flex-col gap-y-7">
               <li>
                 <ul role="list" className="-mx-2 space-y-1">
-                  {navigation.map((item) => {
+                  {navigation.map((item, index) => {
                     return (
                       <React.Fragment key={item.name}>
                         <li
@@ -238,6 +343,7 @@ const Sidebar = ({ setSidebarOpen, sidebarOpen }) => {
                               : "text-gray-800 hover:font-semibold hover:bg-gray-100",
                             "group  flex gap-x-3 items-center rounded-md p-2 text-sm transition duration-500 leading-6 "
                           )}
+                          onClick={() => handleMenuClick(index)}
                         >
                           <Link
                             href={item.href}
@@ -249,36 +355,36 @@ const Sidebar = ({ setSidebarOpen, sidebarOpen }) => {
                             />
                             {item.name}
                           </Link>
-                          {/* {item.subproduct && (
-                            <ChevronDownIcon className=" h-4 w-4  text-white  " />
-                          )} */}
+                          {item.subproduct && (
+                            // <ChevronDownIcon className="h-4 w-4  text-gray-400" /> // Display the arrow icon
+                            activeMenuItem === index ?
+                              <ChevronUpIcon className="h-4 w-4  text-gray-400" />
+                              :
+                              <ChevronDownIcon className="h-4 w-4  text-gray-400" />
+                          )}
                         </li>
 
-                        {item.subproduct?.map((item, index) => {
-                          return (
-                            <div key={item.name}>
-                              <li
+                        {activeMenuItem === index && item.subproduct?.map((subItem, subIndex) => (
+                          <div key={subItem.name}>
+                            <li
+                              className={classNames(
+                                subItem.href === router.pathname
+                                  ? "bg-gray-200  text-gray-800 font-semibold"
+                                  : "text-gray-800 hover:text-gray-800 hover:font-semibold hover:bg-gray-100",
+                                "group flex gap-x-3 items-center rounded-md p-2 pl-7 text-sm transition duration-500 leading-6 "
+                              )}
+                              key={subIndex}
+                            >
+                              <span
                                 className={classNames(
-                                  item.href === router.pathname
-                                    ? "bg-gray-200  text-gray-800 font-semibold"
-                                    : "text-gray-800 hover:text-gray-800 hover:font-semibold hover:bg-gray-100",
-                                  "group flex gap-x-3 items-center rounded-md p-2 pl-7 text-sm transition duration-500 leading-6 "
+                                  subItem.href === router.pathname ? "bg-gray-800" : "",
+                                  "border rounded-full border-gray-300 block w-1.5 h-1.5"
                                 )}
-                                key={index}
-                              >
-                                <span
-                                  className={classNames(
-                                    item.href === router.pathname
-                                      ? "bg-gray-800"
-                                      : "",
-                                    "border rounded-full border-gray-300 block w-1.5 h-1.5"
-                                  )}
-                                ></span>
-                                <Link href={item.href}>{item.name}</Link>
-                              </li>
-                            </div>
-                          );
-                        })}
+                              />
+                              <Link href={subItem.href}>{subItem.name}</Link>
+                            </li>
+                          </div>
+                        ))}
                       </React.Fragment>
                     );
                   })}
