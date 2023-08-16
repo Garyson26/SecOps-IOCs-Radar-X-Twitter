@@ -16,7 +16,7 @@
     "@tailwindcss/forms": "^0.5.4",
     "apexcharts": "^3.41.0",
     "autoprefixer": "10.4.14",
-    "chart.js": "^4.3.0",
+    "chart.js": "^4.3.1",
     "faker": "^6.6.6",
     "jquery": "^3.7.0",
     "next": "13.4.8",
