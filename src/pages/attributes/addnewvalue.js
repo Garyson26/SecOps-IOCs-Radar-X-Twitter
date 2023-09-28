@@ -1,0 +1,212 @@
+import Link from 'next/link'
+import React, { useState } from 'react'
+import { AiFillPlusCircle } from 'react-icons/ai'
+import { IoExtensionPuzzleSharp } from 'react-icons/io5'
+import { Switch } from '@headlessui/react'
+import ColorPicker from '@/components/Common/ColorPicker'
+function classNames(...classes) {
+    return classes.filter(Boolean).join(' ')
+}
+const AddNewValue = () => {
+    const [enabled, setEnabled] = useState(false)
+    return (
+        <div>
+            <div className='bg-white'>
+
+                <div className=' flex items-center justify-between px-4 py-5 sm:px-6  lg:px-[15px] border-b '>
+                    <h1 className='text-[24px] font-semibold '>
+                        Add new value
+                    </h1>
+                    <div className='flex items-center gap-2'>
+                        <button className=' flex items-center border text-[14px] font-medium  text-black bg-white gap-1.5 px-3 py-1.5'>
+                            Help
+                        </button>
+                    </div>
+                </div>
+                <div className='border-b flex items-center'>
+                    <Link className='p-[15px_20px] border-b-[3px] bg-[#f7fcfd] border-black cursor-pointer block' href="/attributes">Attributes</Link>
+                    <Link className='p-[15px_20px] border-b-2 border-transparent cursor-pointer block' href="/features">Features</Link>
+                </div>
+            </div>
+            <div className='px-4 py-8 sm:px-6  lg:px-8'>
+                <div className='border-t  bg-white border p-6 border-t-[#78c4d8]'>
+                    <h2 className='text-[24px] text-[#363a41] font-semibold'>Values</h2>
+                    <div className='mt-5 grid gap-8 max-w-[83%] mx-auto'>
+                        <div className='grid grid-cols-12 items-center gap-6'>
+                            <label className="before:content-['*'] text-right col-span-3 before:ml-0.5 before:text-red-500">
+                                Attribute group
+                            </label>
+
+                            <select className='pr-7 border-neutral-300 col-span-4 bg-[right_0.2rem_center]'>
+                                <option>
+                                    Color
+                                </option>
+                                <option>
+                                    Dimension
+                                </option>
+                                <option>
+                                    Paper Type
+                                </option>
+                                <option>
+                                    Size
+                                </option>
+                            </select>
+                        </div>
+                        <div>
+                            <div className='grid grid-cols-12 items-center gap-6'>
+                                <label className="before:content-['*'] text-right col-span-3 before:ml-0.5 before:text-red-500">
+                                    Value
+                                </label>
+                                <div className='col-span-7'>
+                                    <input className='w-full border-neutral-300' type='text' />
+
+                                </div>
+
+                                <select className='pr-7 border-neutral-300 col-span-2 bg-[right_0.2rem_center]'>
+                                    <option>
+                                        en
+                                    </option>
+                                    <option>
+                                        eng
+                                    </option>
+                                    <option>
+                                        eng
+                                    </option>
+                                </select>
+                            </div>
+
+                        </div>
+                        <div>
+                            <div className='grid grid-cols-12 items-center gap-6'>
+                                <label className=" text-right col-span-3 ">
+                                    URL
+                                </label>
+                                <div className='col-span-6'>
+                                    <input className='w-full border-neutral-300' type='text' />
+
+                                </div>
+
+                                <select className='pr-7 border-neutral-300 col-span-2 bg-[right_0.2rem_center]'>
+                                    <option>
+                                        en
+                                    </option>
+                                    <option>
+                                        eng
+                                    </option>
+                                    <option>
+                                        eng
+                                    </option>
+                                </select>
+                            </div>
+                            <div className='grid grid-cols-12 items-center gap-6'>
+                                <label className="col-span-3">
+
+                                </label>
+                                <div className='col-span-7'>
+                                    <p className='italic text-gray-600 text-[12px]'>
+                                        When the Faceted Search module is enabled, you can get more detailed URLs by choosing the word that best represent this feature. By default, PrestaShop uses the feature's name, but you can change that setting using this field.
+                                    </p>
+
+                                </div>
+                                <div className='col-span-2' >
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div>
+
+                            <div className='grid grid-cols-12 items-center gap-6'>
+                                <label className=" text-right col-span-3 ">
+                                    Meta title
+                                </label>
+                                <div className='col-span-7'>
+                                    <input className='w-full border-neutral-300' type='text' />
+
+                                </div>
+
+                                <select className='pr-7 border-neutral-300 col-span-2 bg-[right_0.2rem_center]'>
+                                    <option>
+                                        en
+                                    </option>
+                                    <option>
+                                        eng
+                                    </option>
+                                    <option>
+                                        eng
+                                    </option>
+                                </select>
+                            </div>
+                            <div className='grid grid-cols-12 items-center gap-6'>
+                                <label className="col-span-3">
+
+                                </label>
+                                <div className='col-span-7'>
+                                    <p className='italic text-gray-600 text-[12px]'>
+                                        When the Faceted Search module is enabled, you can get more detailed page titles by choosing the word that best represent this feature. By default, PrestaShop uses the feature's name, but you can change that setting using this field.
+                                    </p>
+
+                                </div>
+                                <div className='col-span-2' >
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+                        <div className='grid grid-cols-12 items-center gap-6'>
+                            <label className=" text-right col-span-3  ">
+                                Color
+
+                            </label>
+                            <div className=' col-span-5 '>
+
+                                <ColorPicker />
+                            </div>
+
+                        </div>
+                        <div className='grid grid-cols-12 items-center gap-6'>
+                            <label className=" text-right col-span-3 ">
+                                Texture
+                            </label>
+                            <div className='col-span-7 flex items-center  gap-3'>
+                                <input className="relative m-0 block w-full min-w-0 flex-auto cursor-pointer  border border-solid border-neutral-300 bg-clip-padding px-3 py-[0.32rem] font-normal leading-[2.15] text-neutral-700 transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:cursor-pointer file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:bg-neutral-100 file:px-3 file:py-[0.32rem] file:text-neutral-700 file:transition file:duration-150 file:ease-in-out file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem] hover:file:bg-neutral-200 focus:border-primary focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:file:bg-neutral-700 dark:file:text-neutral-100 dark:focus:border-primary" id="formFileLg" type="file" />
+                            </div>
+
+
+                        </div>
+                        <div className='grid grid-cols-12 items-center gap-6'>
+                            <label className=" text-right col-span-3 ">
+                                Current texture
+                            </label>
+                            <div className='col-span-7 flex items-center  gap-3'>
+                                <span className='text-[12px]'>None</span>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+                <div className='bg-white p-8 flex items-center justify-between'>
+                    <Link href="/attributes" className='border hover:border-black hover:bg-neutral-100 font-semibold text-[14px] px-4 py-2'>
+                        Cancel
+                    </Link>
+                    <div className='flex items-center gap-2'>
+                        <button className='border hover:border-black hover:bg-neutral-100 font-semibold text-[14px] px-4 py-2'>
+                            Save then add another value
+                        </button>
+                        <button className='border hover:border-black hover:bg-neutral-100 font-semibold text-[14px] px-4 py-2'>
+                            Save
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    )
+}
+
+export default AddNewValue

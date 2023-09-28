@@ -8,8 +8,10 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        montserrat: ["Montserrat", "sans-serif"],
-        poppins: ["Poppins", "sans-serif"],
+        "montserrat": ["Montserrat", "sans-serif"],
+        "poppins": ["Poppins", "sans-serif"],
+        "ibm": ["IBM Plex Sans", "sans-serif"],
+
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

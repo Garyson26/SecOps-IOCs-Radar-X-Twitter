@@ -11,7 +11,7 @@ function classNames(...classes) {
 const orderdetail = [
     {
         id: '1',
-        img: '/assets/images/blue s.png',
+        img: '/assets/catalog-1.webp',
         name: 'Hummingbird printed t-shirt',
         ref: 'demo_1',
         category: 'Men',
@@ -21,7 +21,7 @@ const orderdetail = [
     },
     {
         id: '1',
-        img: '/assets/images/watchblack.jpg',
+        img: '/assets/catalog-1.webp',
         name: 'Hummingbird printed t-shirt',
         ref: 'demo_1',
         category: 'Men',
@@ -31,7 +31,7 @@ const orderdetail = [
     },
     {
         id: '1',
-        img: '/assets/images/green s.jpg',
+        img: '/assets/catalog-1.webp',
         name: 'Hummingbird printed t-shirt',
         ref: 'demo_1',
         category: 'Men',
@@ -41,7 +41,7 @@ const orderdetail = [
     },
     {
         id: '1',
-        img: '/assets/images/blueshots.png',
+        img: '/assets/catalog-1.webp',
         name: 'Hummingbird printed t-shirt',
         ref: 'demo_1',
         category: 'Men',
@@ -53,11 +53,11 @@ const orderdetail = [
 const Product = () => {
     const [enabled, setEnabled] = useState(false)
     return (
-        <div className='px-4 py-8 sm:px-6 lg:px-8'>
-    <div className='border-t mt-8 bg-white border p-6 border-t-[#78c4d8]'>
-        <h2 className='text-[24px] text-[#363a41] font-semibold'>Orders (5)</h2>
-        <div className='mt-5 px-4'>
-            <div className='overflow-x-auto'>
+        <div className='px-4 py-8 sm:px-6  lg:px-8'>
+
+        <div className='border-t mt-8 bg-white border p-6 border-t-[#78c4d8]'>
+            <h2 className='text-[24px] text-[#363a41] font-semibold'>Orders (5)</h2>
+            <div className='mt-5 px-[4]'>
                 <table className="min-w-full divide-y divide-gray-300">
                     <thead>
                         <tr>
@@ -107,7 +107,7 @@ const Product = () => {
                                 </td>
                                 <td className="text-[#363a41] px-3 py-4 text-[13px] ">{item.id}</td>
                                 <td className="text-[#363a41] px-3 py-4 text-[13px]">
-                                    <Image src={item.img} width={41} height={41} className='w-[41px] h-[41px]' alt="Loading..."/>
+                                    <Image src={item.img} width={41} height={41} className='w-[41px] h-[41px]' />
                                 </td>
                                 <td className="text-[#363a41] px-3 py-4 text-[13px]">{item.name}</td>
                                 <td className="text-[#363a41] px-3 py-4 text-[13px]">{item.ref}</td>
@@ -146,11 +146,10 @@ const Product = () => {
                             </tr>
                         ))}
                     </tbody>
-                    </table>
+                </table>
             </div>
         </div>
-    </div>
-</div>
+        </div>
     )
 }
 

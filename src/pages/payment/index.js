@@ -54,8 +54,8 @@ const Payment = () => {
         </div>
       </div>
       <div className="  w-full mt-6  md:col-span-2 bg-white rounded-lg shadow-md grid px-4 ">
-        <div class=" border-b py-4 px-4 ">
-          <h2 class="text-gray-800 font-semibold text-[17px] font-montserrat">
+        <div className=" border-b py-4 px-4 ">
+          <h2 className="text-gray-800 font-semibold text-[17px] font-montserrat">
             Category wise product stock
           </h2>
         </div>
