@@ -12,9 +12,9 @@ function Navbar() {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <header className="bg-white relative z-[22]">
+      <header className="bg-white shadow-sm  z-[22] p-6 lg:px-8 sticky top-0">
         <nav
-          className="mx-auto shadow-sm relative flex max-w-7xl items-center justify-between p-6 lg:px-8"
+          className="mx-auto  relative flex max-w-7xl items-center justify-between "
           aria-label="Global"
         >
           <div className="flex md:flex-1">
@@ -36,13 +36,13 @@ function Navbar() {
               Dashboard
             </Link>
             <Link
-              href="#"
+              href="/services"
               className="text-sm font-semibold leading-6 text-gray-900"
             >
               Services
             </Link>
             <Link
-              href="#"
+              href="/marketplace"
               className="text-sm font-semibold leading-6 text-gray-900"
             >
               Marketplace
@@ -83,13 +83,13 @@ function Navbar() {
               Dashboard
             </Link>
             <Link
-              href="#"
+              href="/services"
               className="text-sm py-3 font-semibold leading-6 text-gray-900"
             >
               Services
             </Link>
             <Link
-              href="#"
+              href="/marketplace"
               className="text-sm py-3  font-semibold leading-6 text-gray-900"
             >
               Marketplace

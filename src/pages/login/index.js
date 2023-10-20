@@ -1,15 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 import { FaFacebookF, FaGoogle, FaTwitter } from "react-icons/fa";
 
 const Login = () => {
+  const router = useRouter();
+
+  const handleSubmit = () => {
+    // Use router.push to navigate to the '/verification' page
+    router.push('/verification');
+  };
   return (
     <div className="py-10 px-4 md:py-20 bg-gray-50">
       <div className="bg-white mx-auto max-w-xl p-5 shadow-xl rounded-md">
-      <h2 className="text-[25px] font-medium mb-10 text-center text-gray-800">
-        Login Your Marketplace
-      </h2>
+        <h2 className="text-[25px] font-medium mb-10 text-center text-gray-800">
+          Login Your Marketplace
+        </h2>
         <form className="space-y-6" action="#" method="POST">
           <div>
             <label
@@ -77,6 +84,7 @@ const Login = () => {
 
           <div>
             <button
+              onClick={handleSubmit}
               type="submit"
               className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
@@ -85,14 +93,14 @@ const Login = () => {
           </div>
         </form>
         <p className="mt-10 text-center text-sm text-gray-500">
-            Dont have an account?{" "}
-            <Link
-              href="/register"
-              className="text-violet-600 font-semibold ml-2 text-[13px]  relative after:absolute after:content-[' '] hover:after:scale-x-100 hover:after:origin-left after:bg-violet-600 after:bottom-[-5px] after:h-[1px] after:rounded-[2px]  after:left-0 after:right-0 after:origin-right border-animation-time after:scale-x-0"
-            >
-              Register Now
-            </Link>
-          </p>
+          Dont have an account?{" "}
+          <Link
+            href="/register"
+            className="text-violet-600 font-semibold ml-2 text-[13px]  relative after:absolute after:content-[' '] hover:after:scale-x-100 hover:after:origin-left after:bg-violet-600 after:bottom-[-5px] after:h-[1px] after:rounded-[2px]  after:left-0 after:right-0 after:origin-right border-animation-time after:scale-x-0"
+          >
+            Register Now
+          </Link>
+        </p>
       </div>
     </div>
   );

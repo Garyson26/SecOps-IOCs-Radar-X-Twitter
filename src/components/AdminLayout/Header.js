@@ -6,7 +6,7 @@ import { CgMenuLeft } from "react-icons/cg";
 import Link from "next/link";
 const userNavigation = [
   { name: "Your profile", href: "/profile" },
-  { name: "Sign out", href: "#" },
+  { name: "Sign out", href: "/" },
 ];
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')

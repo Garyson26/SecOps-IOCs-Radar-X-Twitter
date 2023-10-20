@@ -13,6 +13,7 @@ import { ProductDetails } from '@/components/Stats/ProductDetails'
 import RegisteredCustomerInformation from '@/components/Stats/RegisteredCustomerInformation'
 import SalesAndOrders from '@/components/Stats/SalesAndOrders'
 import ShopSearch from '@/components/Stats/ShopSearch'
+import StatsDashboard from '@/components/Stats/StatsDashboard'
 import React, { useState } from 'react'
 const stats = [
     {
@@ -170,7 +171,11 @@ const Stats = () => {
                             tab === 16 ?
                             <ShopSearch />
                             :
+                            tab === 17 ?
+                            <StatsDashboard />
+                            :
                             <></>
+                           
                         }
                    
                 </div>

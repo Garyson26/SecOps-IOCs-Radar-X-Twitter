@@ -71,7 +71,7 @@ const Features = () => {
             <div className='px-4 py-8 sm:px-6  lg:px-8'>
 
                 <div className='border-t  bg-white border p-6 border-t-[#78c4d8]'>
-                    <h2 className='text-[24px] text-[#363a41] font-semibold'>Attributes (5)</h2>
+                    <h2 className='text-[24px] text-[#363a41] font-semibold'>Features (5)</h2>
                     <div className='mt-5 overflow-auto px-[4]'>
                         <table className="min-w-full divide-y divide-gray-300">
                             <thead>

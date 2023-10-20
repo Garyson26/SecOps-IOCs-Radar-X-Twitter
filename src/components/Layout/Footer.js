@@ -34,9 +34,12 @@ const footerNavigation = {
     
     ],
     terms: [
-        { name: 'Terms of Usage', href: '#' },
-        { name: 'Privacy Policy', href: '#' },
-        { name: 'About us', href: '/aboutus' },
+      { name: 'Terms of Usage', href: '/information' },
+      { name: 'Privacy Policy', href: '/privacy-policy' },
+      { name: 'Faqs', href: '/faqs' },
+      { name: 'About us', href: '/aboutus' },
+      { name: 'contact us', href: '/contactus' },
+
       
       ],
   }

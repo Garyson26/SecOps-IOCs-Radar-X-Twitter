@@ -10,7 +10,7 @@ const AddNewAttribute = () => {
     const [enabled, setEnabled] = useState(false)
     return (
         <div>
-            <div className='bg-white '>
+            <div className='bg-white'>
 
                 <div className=' flex items-center justify-between px-4 py-5 sm:px-6  lg:px-[15px] border-b '>
                     <h1 className='text-[24px] font-semibold '>
@@ -105,7 +105,7 @@ const AddNewAttribute = () => {
                                 </label>
                                 <div className='col-span-7'>
                                     <p className='italic text-gray-600 text-[12px]'>
-                                        When the Faceted Search module is enabled,you can get more detailed URLs by choosing the word that best represent this feature. By default, PrestaShop uses the feature's name, but you can change that setting using this field.
+                                        When the Faceted Search module is enabled, you can get more detailed URLs by choosing the word that best represent this feature. By default, PrestaShop uses the feature's name, but you can change that setting using this field.
                                     </p>
 
                                 </div>
