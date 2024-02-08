@@ -372,3 +372,19 @@ def run_crawl(keyword, since=None, until=None, max_tweets=None,
         loop.close()
 
     return tweets
+
+
+def parse_lines(text):
+    """Parse *text* as one JSON document per line."""
+    out = []
+    for line in text.splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        out.append(json.loads(line))
+    return out
+
+
+def to_jsonl(records):
+    """Serialise *records* as one compact JSON document per line."""
+    return "".join(json.dumps(r, sort_keys=True) + "\n" for r in records)
