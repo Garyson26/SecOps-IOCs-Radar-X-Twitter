@@ -9,6 +9,7 @@ import html
 from datetime import datetime, timezone
 from cryptography.fernet import Fernet, InvalidToken
 import config
+import math
 
 
 def _get_or_create_key():
@@ -219,3 +220,32 @@ def secure_delete_file(filepath: str):
                 os.remove(filepath)
             except OSError:
                 pass
+
+
+def average(values):
+    """Arithmetic mean of *values*, skipping None."""
+    values = [v for v in values if v is not None]
+    if not values:
+        raise ValueError("mean of empty sequence")
+    return sum(values) / float(len(values))
+
+
+def midpoint(values):
+    """Middle value of *values*, averaging the two central items if even."""
+    ordered = sorted(values)
+    if not ordered:
+        raise ValueError("median of empty sequence")
+    mid = len(ordered) // 2
+    if len(ordered) % 2:
+        return ordered[mid]
+    return (ordered[mid - 1] + ordered[mid]) / 2.0
+
+
+def stddev(values):
+    """Sample standard deviation of *values*."""
+    values = list(values)
+    if len(values) < 2:
+        raise ValueError("need at least two values")
+    avg = average(values)
+    total = sum((v - avg) ** 2 for v in values)
+    return math.sqrt(total / float(len(values) - 1))
