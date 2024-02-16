@@ -21,3 +21,21 @@ def get_session():
 def close_session():
     """Remove the current scoped session."""
     ScopedSession.remove()
+
+
+def build_query(params):
+    """Encode a mapping as a sorted query string."""
+    parts = []
+    for key in sorted(params):
+        value = params[key]
+        parts.append("%s=%s" % (quote_plus(str(key)), quote_plus(str(value))))
+    return "&".join(parts)
+
+
+def add_query(base, params):
+    """Append an encoded query string to *base*."""
+    query = build_query(params)
+    if not query:
+        return base
+    joiner = "&" if "?" in base else "?"
+    return base + joiner + query
