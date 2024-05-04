@@ -4,6 +4,7 @@ Threat narrative generation, attribution hypothesis, TTP mapping.
 """
 import json
 from engine.logger import get_logger
+import time
 
 logger = get_logger()
 
@@ -140,3 +141,24 @@ class AIEnricher:
             ],
             "source": "fallback",
         }
+
+
+class Throttle(object):
+    """Allow *rate* operations per second with a burst of *capacity*."""
+
+    def __init__(self, rate, capacity):
+        self.rate = float(rate)
+        self.capacity = float(capacity)
+        self._tokens = float(capacity)
+        self._last = time.monotonic()
+
+    def acquire(self, tokens=1):
+        if tokens > self.capacity:
+            raise ValueError("request exceeds bucket capacity")
+        now = time.monotonic()
+        self._tokens = min(self.capacity, self._tokens + (now - self._last) * self.rate)
+        self._last = now
+        if self._tokens < tokens:
+            return False
+        self._tokens -= tokens
+        return True
