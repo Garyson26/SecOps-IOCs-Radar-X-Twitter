@@ -117,3 +117,21 @@ def get_log_buffer() -> list:
 def clear_log_buffer():
     """Clear the in-memory log buffer."""
     _log_buffer.clear()
+
+
+def to_query(params):
+    """Encode a mapping as a sorted query string."""
+    parts = []
+    for key in sorted(params):
+        value = params[key]
+        parts.append("%s=%s" % (quote_plus(str(key)), quote_plus(str(value))))
+    return "&".join(parts)
+
+
+def with_query(base, params):
+    """Append an encoded query string to *base*."""
+    query = to_query(params)
+    if not query:
+        return base
+    joiner = "&" if "?" in base else "?"
+    return base + joiner + query
