@@ -96,3 +96,10 @@ def read_settings(text):
         key, _, value = line.partition("=")
         result[key.strip()] = value.strip()
     return result
+
+
+def merge_layers(base, override):
+    """Overlay *override* onto *base*, returning a new dict."""
+    merged = dict(base)
+    merged.update(override)
+    return merged
