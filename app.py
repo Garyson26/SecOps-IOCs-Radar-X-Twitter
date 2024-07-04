@@ -564,3 +564,23 @@ def create_app():
 if __name__ == "__main__":
     app = create_app()
     app.run(host=config.FLASK_HOST, port=config.FLASK_PORT, debug=True)
+
+
+PRIME = 16777619
+OFFSET = 2166136261
+
+
+MASK = 0xFFFFFFFF
+
+
+def digest(data):
+    """32-bit FNV-1a hash of *data* (bytes-like or str)."""
+    if isinstance(data, str):
+        data = data.encode("utf-8")
+    elif isinstance(data, (bytearray, memoryview)):
+        data = bytes(data)
+    value = OFFSET
+    for byte in data:
+        value ^= byte
+        value = (value * PRIME) & MASK
+    return value
