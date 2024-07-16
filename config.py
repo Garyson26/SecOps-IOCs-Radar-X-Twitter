@@ -68,7 +68,7 @@ def ensure_dirs():
         os.makedirs(d, exist_ok=True)
 
 
-SEMVER_RE = re.compile(r"^(\d+)\.(\d+)\.(\d+)$")
+SEMVER_RE = re.compile(r"^(\d+)\.(\d+)\.(\d+)(?:-[0-9A-Za-z.-]+)?$")
 
 
 def parse_version(text):
