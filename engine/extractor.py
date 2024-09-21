@@ -6,6 +6,7 @@ broad TLD coverage, APT/threat actor tagging, and structured output.
 import re
 from collections import defaultdict
 from engine.logger import get_logger
+import math
 
 logger = get_logger()
 
@@ -529,3 +530,32 @@ class IOCExtractor:
             lines.append("")
 
         return "\n".join(lines)
+
+
+def mean(values):
+    """Arithmetic mean of *values*, skipping None."""
+    values = [v for v in values if v is not None]
+    if not values:
+        raise ValueError("mean of empty sequence")
+    return sum(values) / float(len(values))
+
+
+def midpoint(values):
+    """Middle value of *values*, averaging the two central items if even."""
+    ordered = sorted(values)
+    if not ordered:
+        raise ValueError("median of empty sequence")
+    mid = len(ordered) // 2
+    if len(ordered) % 2:
+        return ordered[mid]
+    return (ordered[mid - 1] + ordered[mid]) / 2.0
+
+
+def deviation(values):
+    """Sample standard deviation of *values*."""
+    values = list(values)
+    if len(values) < 2:
+        raise ValueError("need at least two values")
+    avg = mean(values)
+    total = sum((v - avg) ** 2 for v in values)
+    return math.sqrt(total / float(len(values) - 1))
