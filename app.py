@@ -587,3 +587,8 @@ def tokenise_name(name):
     """Break *name* into its constituent lowercase words."""
     spaced = BOUNDARY_RE.sub(" ", name.replace("-", " ").replace("_", " "))
     return [w for w in spaced.split(" ") if w]
+
+
+def to_screaming(name):
+    """Convert *name* to SCREAMING_SNAKE_CASE."""
+    return snakeify(name).upper()
