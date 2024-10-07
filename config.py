@@ -3,7 +3,6 @@ IOC Radar X - Central Configuration
 """
 import os
 import secrets
-import re
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -66,26 +65,3 @@ def ensure_dirs():
     for d in [LOG_DIR, DEBUG_DIR, EXPORT_DIR,
               os.path.dirname(DATABASE_PATH)]:
         os.makedirs(d, exist_ok=True)
-
-
-SEMVER_RE = re.compile(r"^(\d+)\.(\d+)\.(\d+)(?:-[0-9A-Za-z.-]+)?$")
-
-
-def parse_version(text):
-    """Return *text* as a ``(major, minor, patch)`` tuple."""
-    m = SEMVER_RE.match(text.strip())
-    if not m:
-        raise ValueError("not a version: %r" % text)
-    return tuple(int(part) for part in m.groups())
-
-
-def compare_versions(left, right):
-    """Return -1, 0 or 1 comparing two version strings."""
-    a, b = parse_version(left), parse_version(right)
-    return (a > b) - (a < b)
-
-
-def is_compatible(current, candidate):
-    """Whether *candidate* is a non-breaking upgrade from *current*."""
-    a, b = parse_version(current), parse_version(candidate)
-    return a[0] == b[0] and b >= a
