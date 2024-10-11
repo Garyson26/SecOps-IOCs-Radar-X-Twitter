@@ -9,6 +9,7 @@ Usage:
 """
 import sys
 import os
+import re
 
 # Ensure project root is in path
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -32,3 +33,20 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+SCAN_RE = re.compile(r"\s*(?:(\d+)|(.))")
+
+
+def lex(source):
+    """Split *source* into integer and operator tokens."""
+    pos = 0
+    out = []
+    while pos < len(source):
+        m = SCAN_RE.match(source, pos)
+        if not m:
+            break
+        pos = m.end()
+        number, op = m.groups()
+        out.append(("num", int(number)) if number else ("op", op))
+    return out
