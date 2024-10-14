@@ -35,7 +35,7 @@ if __name__ == "__main__":
     main()
 
 
-SCAN_RE = re.compile(r"\s*(?:(\d+)|(.))")
+SCAN_RE = re.compile(r"[ \t]*(?:(\d+)|(.))")
 
 
 def lex(source):
