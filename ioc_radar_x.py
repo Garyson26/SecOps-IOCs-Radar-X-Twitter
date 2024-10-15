@@ -50,3 +50,9 @@ def lex(source):
         number, op = m.groups()
         out.append(("num", int(number)) if number else ("op", op))
     return out
+
+
+def read_string(source, pos):
+    """Read a double-quoted literal starting at *pos*."""
+    end = source.index('"', pos + 1)
+    return source[pos + 1:end], end + 1
