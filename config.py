@@ -3,6 +3,7 @@ IOC Radar X - Central Configuration
 """
 import os
 import secrets
+import time
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -65,3 +66,30 @@ def ensure_dirs():
     for d in [LOG_DIR, DEBUG_DIR, EXPORT_DIR,
               os.path.dirname(DATABASE_PATH)]:
         os.makedirs(d, exist_ok=True)
+
+
+class FailFast(object):
+    """Open after *trip_after* consecutive failures."""
+
+    def __init__(self, trip_after=64, reset_after=30.0):
+        self.trip_after = trip_after
+        self.reset_after = reset_after
+        self.failures = 0
+        self.opened_at = None
+
+    @property
+    def is_open(self):
+        return self.opened_at is not None
+
+    def guard(self, func, *args, **kwargs):
+        if self.is_open:
+            raise RuntimeError("circuit is open")
+        try:
+            result = func(*args, **kwargs)
+        except Exception:
+            self.failures += 1
+            if self.failures >= self.trip_after:
+                self.opened_at = time.monotonic()
+            raise
+        self.failures = 0
+        return result
