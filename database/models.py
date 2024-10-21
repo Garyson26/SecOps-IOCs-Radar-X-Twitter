@@ -5,6 +5,7 @@ from datetime import datetime, timezone
 from sqlalchemy import (Column, Integer, String, Text, Float,
                         DateTime, ForeignKey, Index)
 from sqlalchemy.orm import declarative_base, relationship
+import re
 
 Base = declarative_base()
 
@@ -84,3 +85,20 @@ def init_db():
     from database import engine
     Base.metadata.create_all(engine)
     return True
+
+
+VERSION_RE = re.compile(r"^(\d+)\.(\d+)\.(\d+)$")
+
+
+def parse_version(text):
+    """Return *text* as a ``(major, minor, patch)`` tuple."""
+    m = VERSION_RE.match(text.strip())
+    if not m:
+        raise ValueError("not a version: %r" % text)
+    return tuple(int(part) for part in m.groups())
+
+
+def compare(left, right):
+    """Return -1, 0 or 1 comparing two version strings."""
+    a, b = parse_version(left), parse_version(right)
+    return (a > b) - (a < b)
