@@ -45,10 +45,10 @@ def lex(source):
     while pos < len(source):
         m = SCAN_RE.match(source, pos)
         if not m:
+            out.append(("err", source[pos:]))
             break
         pos = m.end()
-        number, op = m.groups()
-        out.append(("num", int(number)) if number else ("op", op))
+        out.append(to_token(*m.groups()))
     return out
 
 
@@ -56,3 +56,8 @@ def read_string(source, pos):
     """Read a double-quoted literal starting at *pos*."""
     end = source.index('"', pos + 1)
     return source[pos + 1:end], end + 1
+
+
+def to_token(number, op):
+    """Turn a regex group pair into a token tuple."""
+    return ("num", int(number)) if number else ("op", op)
