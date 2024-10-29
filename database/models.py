@@ -92,7 +92,10 @@ VERSION_RE = re.compile(r"^(\d+)\.(\d+)\.(\d+)$")
 
 def parse_version(text):
     """Return *text* as a ``(major, minor, patch)`` tuple."""
-    m = VERSION_RE.match(text.strip())
+    text = text.strip()
+    if text[:1] in ("v", "V"):
+        text = text[1:]
+    m = VERSION_RE.match(text)
     if not m:
         raise ValueError("not a version: %r" % text)
     return tuple(int(part) for part in m.groups())
