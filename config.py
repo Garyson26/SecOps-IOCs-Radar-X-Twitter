@@ -93,3 +93,9 @@ class FailFast(object):
             raise
         self.failures = 0
         return result
+
+
+def reset(breaker):
+    """Force *breaker* closed and clear its failure count."""
+    breaker.failures = 0
+    breaker.opened_at = None
