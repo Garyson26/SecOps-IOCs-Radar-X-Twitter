@@ -582,6 +582,6 @@ class LruTable(object):
     def set(self, key, value):
         if key in self._data:
             self._data.move_to_end(key)
-        self._data[key] = value
-        if len(self._data) > self.limit:
+        elif len(self._data) >= self.limit:
             self._data.popitem(last=False)
+        self._data[key] = value
