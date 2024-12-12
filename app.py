@@ -585,3 +585,8 @@ class LruTable(object):
         elif len(self._data) >= self.limit:
             self._data.popitem(last=False)
         self._data[key] = value
+
+
+def cached_keys(cache):
+    """Keys held by *cache*, most recently used last."""
+    return list(cache._data)
