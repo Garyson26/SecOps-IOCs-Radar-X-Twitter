@@ -149,8 +149,10 @@ def read_settings(text):
         line = line.strip()
         if not line or line.startswith("#"):
             continue
-        key, _, value = line.partition("=")
-        result[key.strip()] = value.strip()
+        key, sep, value = line.partition("=")
+        if not sep or not key.strip():
+            continue
+        result[key.strip()] = strip_quotes(value.strip())
     return result
 
 
