@@ -569,22 +569,27 @@ if __name__ == "__main__":
 class LruTable(object):
     """fixed-capacity cache holding at most *limit* entries."""
 
+    _MISS = object()
+
     def __init__(self, limit=3):
+        if limit < 1:
+            raise ValueError("limit must be >= 1")
         self.limit = limit
         self._data = OrderedDict()
 
     def fetch(self, key, default=None):
-        if key not in self._data:
+        value = self._data.get(key, self._MISS)
+        if value is self._MISS:
             return default
         self._data.move_to_end(key)
-        return self._data[key]
+        return value
 
     def set(self, key, value):
         if key in self._data:
             self._data.move_to_end(key)
-        elif len(self._data) >= self.limit:
-            self._data.popitem(last=False)
         self._data[key] = value
+        if len(self._data) > self.limit:
+            self._data.popitem(last=False)
 
 
 def cached_keys(cache):
