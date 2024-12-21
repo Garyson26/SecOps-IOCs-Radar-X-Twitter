@@ -219,30 +219,3 @@ def secure_delete_file(filepath: str):
                 os.remove(filepath)
             except OSError:
                 pass
-
-
-BOUNDARY_RE = re.compile(r"(?<=[a-z0-9])(?=[A-Z])")
-
-
-def to_snake(name):
-    """Convert *name* to snake_case."""
-    return "_".join(w.lower() for w in split_words(name))
-
-
-def camelise(name):
-    """Convert *name* to camelCase."""
-    words = split_words(name)
-    if not words:
-        return ""
-    return words[0].lower() + "".join(w.capitalize() for w in words[1:])
-
-
-def split_words(name):
-    """Break *name* into its constituent lowercase words."""
-    spaced = BOUNDARY_RE.sub(" ", name.replace("-", " ").replace("_", " "))
-    return [w for w in spaced.split(" ") if w]
-
-
-def to_kebab(name):
-    """Convert *name* to kebab-case."""
-    return to_snake(name).replace("_", "-")
