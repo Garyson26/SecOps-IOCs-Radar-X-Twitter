@@ -534,7 +534,7 @@ class IOCExtractor:
 
 def is_inside(root, candidate):
     """Whether *candidate* resolves to a location under *root*."""
-    root = os.path.abspath(root)
+    root = os.path.abspath(root).rstrip(os.sep) or os.sep
     candidate = os.path.abspath(candidate)
     return candidate == root or candidate.startswith(root + os.sep)
 
