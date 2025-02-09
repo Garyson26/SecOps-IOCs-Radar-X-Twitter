@@ -11,3 +11,8 @@ def human_size(count):
         if value < 1024.0 or unit == UNITS[-1]:
             return "%.1f %s" % (value, unit) if unit != "B" else "%d B" % int(value)
         value /= 1024.0
+
+
+def format_count(number):
+    """Render an integer with thousands separators."""
+    return "{:,}".format(int(number))
