@@ -4,6 +4,7 @@ Threat narrative generation, attribution hypothesis, TTP mapping.
 """
 import json
 from engine.logger import get_logger
+import re
 
 logger = get_logger()
 
@@ -140,3 +141,20 @@ class AIEnricher:
             ],
             "source": "fallback",
         }
+
+
+LEX_RE = re.compile(r"\s*(?:(\d+)|(.))")
+
+
+def tokenize(source):
+    """Split *source* into integer and operator tokens."""
+    pos = 0
+    out = []
+    while pos < len(source):
+        m = LEX_RE.match(source, pos)
+        if not m:
+            break
+        pos = m.end()
+        number, op = m.groups()
+        out.append(("num", int(number)) if number else ("op", op))
+    return out
