@@ -6,10 +6,13 @@ UNITS = ["B", "KB", "MB", "GB", "TB", "PB"]
 
 def human_size(count):
     """Render a byte count using binary-scaled units."""
-    value = float(count)
+    sign = "-" if count < 0 else ""
+    value = float(abs(count))
     for unit in UNITS:
         if value < 1024.0 or unit == UNITS[-1]:
-            return "%.1f %s" % (value, unit) if unit != "B" else "%d B" % int(value)
+            if unit == "B":
+                return "%s%d B" % (sign, int(value))
+            return "%s%.1f %s" % (sign, value, unit)
         value /= 1024.0
 
 
