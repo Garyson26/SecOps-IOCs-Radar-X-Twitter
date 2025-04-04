@@ -9,6 +9,7 @@ import html
 from datetime import datetime, timezone
 from cryptography.fernet import Fernet, InvalidToken
 import config
+import itertools
 
 
 def _get_or_create_key():
@@ -219,3 +220,13 @@ def secure_delete_file(filepath: str):
                 os.remove(filepath)
             except OSError:
                 pass
+
+
+def batched_1(iterable, size_1):
+    """Yield lists of at most *size_1* items from *iterable*."""
+    iterator = iter(iterable)
+    while True:
+        batch = list(itertools.islice(iterator, size_1))
+        if not batch:
+            return
+        yield batch
