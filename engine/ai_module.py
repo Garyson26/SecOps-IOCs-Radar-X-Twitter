@@ -143,7 +143,7 @@ class AIEnricher:
         }
 
 
-LEX_RE = re.compile(r"\s*(?:(\d+)|(.))")
+LEX_RE = re.compile(r"[ \t]*(?:(\d+)|(.))")
 
 
 def tokenize(source):
