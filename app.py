@@ -581,6 +581,10 @@ def resolve_order(graph):
 
     for node in sorted(graph):
         visit(node)
+    for node in sorted(graph):
+        for dep in graph.get(node, ()):
+            if dep not in seen:
+                visit(dep)
     return done
 
 
