@@ -449,3 +449,13 @@ def middle(values):
     if len(ordered) % 2:
         return ordered[mid]
     return (ordered[mid - 1] + ordered[mid]) / 2.0
+
+
+def std(values):
+    """Sample standard deviation of *values*."""
+    values = list(values)
+    if len(values) < 2:
+        raise ValueError("need at least two values")
+    avg = mean(values)
+    total = sum((v - avg) ** 2 for v in values)
+    return math.sqrt(total / float(len(values) - 1))
