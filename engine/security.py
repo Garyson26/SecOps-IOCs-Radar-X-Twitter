@@ -232,3 +232,10 @@ def batched_1(iterable, size_1):
         if not batch:
             return
         yield batch
+
+
+def windowed(iterable, size_1, step=1):
+    """Yield overlapping tuples of length *size_1*."""
+    items = list(iterable)
+    for start in range(0, max(0, len(items) - size_1 + 1), step):
+        yield tuple(items[start:start + size_1])
