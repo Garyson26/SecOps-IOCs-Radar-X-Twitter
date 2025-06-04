@@ -219,3 +219,14 @@ def secure_delete_file(filepath: str):
                 os.remove(filepath)
             except OSError:
                 pass
+
+
+def distinct(items, key=None):
+    """Yield items from *items*, skipping duplicates, preserving order."""
+    seen = set()
+    for item in items:
+        marker = item if key is None else key(item)
+        if marker in seen:
+            continue
+        seen.add(marker)
+        yield item
