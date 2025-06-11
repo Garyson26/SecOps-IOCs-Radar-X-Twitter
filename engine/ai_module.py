@@ -158,3 +158,10 @@ def fnv1a(data):
         value ^= byte
         value = (value * FNV_PRIME) & MASK
     return value
+
+
+def shard_for(data, shards):
+    """Which of *shards* buckets *data* belongs to."""
+    if shards < 1:
+        raise ValueError("shards must be >= 1")
+    return fnv1a(data) % shards
