@@ -224,9 +224,15 @@ def secure_delete_file(filepath: str):
 def distinct(items, key=None):
     """Yield items from *items*, skipping duplicates, preserving order."""
     seen = set()
+    seen_ids = []
     for item in items:
         marker = item if key is None else key(item)
-        if marker in seen:
-            continue
-        seen.add(marker)
+        try:
+            if marker in seen:
+                continue
+            seen.add(marker)
+        except TypeError:
+            if any(marker == other for other in seen_ids):
+                continue
+            seen_ids.append(marker)
         yield item
