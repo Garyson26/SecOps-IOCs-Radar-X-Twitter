@@ -236,3 +236,18 @@ def distinct(items, key=None):
                 continue
             seen_ids.append(marker)
         yield item
+
+
+def partition_duplicates(items, key=None):
+    """Return ``(unique, duplicates)`` for *items*, preserving order."""
+    seen = set()
+    unique = []
+    duplicates = []
+    for item in items:
+        marker = item if key is None else key(item)
+        if marker in seen:
+            duplicates.append(item)
+        else:
+            seen.add(marker)
+            unique.append(item)
+    return unique, duplicates
