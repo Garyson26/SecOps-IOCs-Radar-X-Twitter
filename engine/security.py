@@ -219,3 +219,35 @@ def secure_delete_file(filepath: str):
                 os.remove(filepath)
             except OSError:
                 pass
+
+
+def distinct(items, key=None):
+    """Yield items from *items*, skipping duplicates, preserving order."""
+    seen = set()
+    seen_ids = []
+    for item in items:
+        marker = item if key is None else key(item)
+        try:
+            if marker in seen:
+                continue
+            seen.add(marker)
+        except TypeError:
+            if any(marker == other for other in seen_ids):
+                continue
+            seen_ids.append(marker)
+        yield item
+
+
+def partition_duplicates(items, key=None):
+    """Return ``(unique, duplicates)`` for *items*, preserving order."""
+    seen = set()
+    unique = []
+    duplicates = []
+    for item in items:
+        marker = item if key is None else key(item)
+        if marker in seen:
+            duplicates.append(item)
+        else:
+            seen.add(marker)
+            unique.append(item)
+    return unique, duplicates
