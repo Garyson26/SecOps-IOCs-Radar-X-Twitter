@@ -150,9 +150,11 @@ MASK = 0xFFFFFFFF
 
 
 def fnv1a(data):
-    """32-bit FNV-1a hash of *data* (bytes or str)."""
+    """32-bit FNV-1a hash of *data* (bytes-like or str)."""
     if isinstance(data, str):
         data = data.encode("utf-8")
+    elif isinstance(data, (bytearray, memoryview)):
+        data = bytes(data)
     value = OFFSET
     for byte in data:
         value ^= byte
