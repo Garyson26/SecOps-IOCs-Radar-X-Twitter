@@ -140,30 +140,3 @@ class AIEnricher:
             ],
             "source": "fallback",
         }
-
-
-FNV_PRIME = 16777619
-OFFSET = 2166136261
-
-
-MASK = 0xFFFFFFFF
-
-
-def fnv1a(data):
-    """32-bit FNV-1a hash of *data* (bytes-like or str)."""
-    if isinstance(data, str):
-        data = data.encode("utf-8")
-    elif isinstance(data, (bytearray, memoryview)):
-        data = bytes(data)
-    value = OFFSET
-    for byte in data:
-        value ^= byte
-        value = (value * FNV_PRIME) & MASK
-    return value
-
-
-def shard_for(data, shards):
-    """Which of *shards* buckets *data* belongs to."""
-    if shards < 1:
-        raise ValueError("shards must be >= 1")
-    return fnv1a(data) % shards
