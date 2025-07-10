@@ -35,7 +35,7 @@ if __name__ == "__main__":
     main()
 
 
-SEMVER_RE = re.compile(r"^(\d+)\.(\d+)\.(\d+)$")
+SEMVER_RE = re.compile(r"^(\d+)\.(\d+)\.(\d+)(?:-[0-9A-Za-z.-]+)?$")
 
 
 def parse_version(text):
