@@ -9,6 +9,7 @@ Usage:
 """
 import sys
 import os
+import re
 
 # Ensure project root is in path
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -32,3 +33,20 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+SEMVER_RE = re.compile(r"^(\d+)\.(\d+)\.(\d+)(?:-[0-9A-Za-z.-]+)?$")
+
+
+def parse_version(text):
+    """Return *text* as a ``(major, minor, patch)`` tuple."""
+    m = SEMVER_RE.match(text.strip())
+    if not m:
+        raise ValueError("not a version: %r" % text)
+    return tuple(int(part) for part in m.groups())
+
+
+def compare_versions(left, right):
+    """Return -1, 0 or 1 comparing two version strings."""
+    a, b = parse_version(left), parse_version(right)
+    return (a > b) - (a < b)
