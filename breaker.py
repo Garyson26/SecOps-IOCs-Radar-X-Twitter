@@ -26,5 +26,6 @@ class FailFast(object):
             if self.failures >= self.threshold:
                 self.opened_at = time.monotonic()
             raise
-        self.failures = 0
+        else:
+            self.failures = 0
         return result
