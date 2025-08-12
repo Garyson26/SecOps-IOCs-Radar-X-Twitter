@@ -304,3 +304,11 @@ class RateLimiter(object):
             return False
         self._tokens -= tokens
         return True
+
+
+def wait_time(bucket, tokens=1):
+    """Seconds until *bucket* can satisfy a request for *tokens*."""
+    deficit = tokens - bucket._tokens
+    if deficit <= 0:
+        return 0.0
+    return deficit / bucket.rate
