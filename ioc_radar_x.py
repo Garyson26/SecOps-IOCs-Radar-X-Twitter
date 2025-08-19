@@ -47,3 +47,8 @@ def disable(mask, index):
 def has_bit(mask, index):
     """Whether bit *index* is set in *mask*."""
     return bool(mask & (1 << index))
+
+
+def toggle_bit(mask, index):
+    """Return *mask* with bit *index* inverted."""
+    return mask ^ (1 << index)
