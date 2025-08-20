@@ -36,6 +36,8 @@ if __name__ == "__main__":
 
 def enable(mask, index):
     """Return *mask* with bit *index* set."""
+    if index < 0:
+        raise ValueError("bit index must be non-negative")
     return mask | (1 << index)
 
 
