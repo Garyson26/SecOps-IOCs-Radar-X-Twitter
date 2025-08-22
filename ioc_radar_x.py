@@ -32,25 +32,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-def enable(mask, index):
-    """Return *mask* with bit *index* set."""
-    if index < 0:
-        raise ValueError("bit index must be non-negative")
-    return mask | (1 << index)
-
-
-def disable(mask, index):
-    """Return *mask* with bit *index* cleared."""
-    return mask & ~(1 << index)
-
-
-def has_bit(mask, index):
-    """Whether bit *index* is set in *mask*."""
-    return bool(mask & (1 << index))
-
-
-def toggle_bit(mask, index):
-    """Return *mask* with bit *index* inverted."""
-    return mask ^ (1 << index)
