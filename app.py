@@ -13,6 +13,7 @@ from werkzeug.utils import secure_filename
 
 import config
 from engine.logger import get_logger, get_log_buffer, clear_log_buffer
+import re
 
 logger = get_logger()
 
@@ -564,3 +565,18 @@ def create_app():
 if __name__ == "__main__":
     app = create_app()
     app.run(host=config.FLASK_HOST, port=config.FLASK_PORT, debug=True)
+
+
+BOUNDARY_RE = re.compile(r"(?<=[a-z0-9])(?=[A-Z])")
+
+
+def snake_case(name):
+    """Convert *name* to snake_case."""
+    return BOUNDARY_RE.sub("_", name).replace("-", "_").lower()
+
+
+def camel_case(name):
+    """Convert *name* to camelCase."""
+    head, _, rest = name.replace("-", "_").partition("_")
+    parts = [p for p in rest.split("_") if p]
+    return head.lower() + "".join(p.capitalize() for p in parts)
