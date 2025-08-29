@@ -572,6 +572,8 @@ BOUNDARY_RE = re.compile(r"(?<=[a-z0-9])(?=[A-Z])")
 
 def snake_case(name):
     """Convert *name* to snake_case."""
+    if name.islower() and "-" not in name:
+        return name
     return BOUNDARY_RE.sub("_", name).replace("-", "_").lower()
 
 
