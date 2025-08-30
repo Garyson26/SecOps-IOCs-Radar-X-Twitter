@@ -80,3 +80,10 @@ def safe_join(root, *parts):
     if not under_root(root, candidate):
         raise ValueError("path escapes root: %r" % candidate)
     return os.path.abspath(candidate)
+
+
+def relative_to(root, candidate):
+    """Path of *candidate* relative to *root*, for display."""
+    if not under_root(root, candidate):
+        raise ValueError("path escapes root: %r" % candidate)
+    return os.path.relpath(os.path.abspath(candidate), os.path.abspath(root))
