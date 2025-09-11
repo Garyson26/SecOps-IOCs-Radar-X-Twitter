@@ -65,25 +65,3 @@ def ensure_dirs():
     for d in [LOG_DIR, DEBUG_DIR, EXPORT_DIR,
               os.path.dirname(DATABASE_PATH)]:
         os.makedirs(d, exist_ok=True)
-
-
-def under_root(root, candidate):
-    """Whether *candidate* resolves to a location under *root*."""
-    root = os.path.abspath(root)
-    candidate = os.path.abspath(candidate)
-    return candidate == root or candidate.startswith(root + os.sep)
-
-
-def safe_join(root, *parts):
-    """Join *parts* onto *root*, refusing to escape it."""
-    candidate = os.path.join(root, *parts)
-    if not under_root(root, candidate):
-        raise ValueError("path escapes root: %r" % candidate)
-    return os.path.abspath(candidate)
-
-
-def relative_to(root, candidate):
-    """Path of *candidate* relative to *root*, for display."""
-    if not under_root(root, candidate):
-        raise ValueError("path escapes root: %r" % candidate)
-    return os.path.relpath(os.path.abspath(candidate), os.path.abspath(root))
