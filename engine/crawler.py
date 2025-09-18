@@ -372,3 +372,12 @@ def run_crawl(keyword, since=None, until=None, max_tweets=None,
         loop.close()
 
     return tweets
+
+
+def date_range(start, end, step_days=1):
+    """Yield dates from *start* up to but not including *end*."""
+    current = start
+    delta = timedelta(days=step_days)
+    while current < end:
+        yield current
+        current += delta
