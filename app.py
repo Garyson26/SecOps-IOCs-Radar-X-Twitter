@@ -587,3 +587,8 @@ def words_in(name):
     """Break *name* into its constituent lowercase words."""
     spaced = BOUNDARY_RE.sub(" ", name.replace("-", " ").replace("_", " "))
     return [w for w in spaced.split(" ") if w]
+
+
+def to_kebab(name):
+    """Convert *name* to kebab-case."""
+    return snake_case(name).replace("_", "-")
