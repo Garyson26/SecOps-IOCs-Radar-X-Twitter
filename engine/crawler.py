@@ -381,3 +381,8 @@ def date_range(start, end, step_days=1):
     while current < end:
         yield current
         current += delta
+
+
+def span_days(start, end):
+    """Number of whole days between *start* and *end*."""
+    return max(0, (end - start).days)
