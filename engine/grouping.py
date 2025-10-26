@@ -16,3 +16,11 @@ def batched(iterable, width):
         if not batch:
             return
         yield batch
+
+
+def padded_batches(iterable, width, filler=None):
+    """Like the plain batcher, but pads the last batch to *width*."""
+    for batch in batched(iterable, width):
+        if len(batch) < width:
+            batch = batch + [filler] * (width - len(batch))
+        yield batch
