@@ -65,3 +65,18 @@ def ensure_dirs():
     for d in [LOG_DIR, DEBUG_DIR, EXPORT_DIR,
               os.path.dirname(DATABASE_PATH)]:
         os.makedirs(d, exist_ok=True)
+
+
+def set_bit(mask, index):
+    """Return *mask* with bit *index* set."""
+    return mask | (1 << index)
+
+
+def disable(mask, index):
+    """Return *mask* with bit *index* cleared."""
+    return mask & ~(1 << index)
+
+
+def test_bit(mask, index):
+    """Whether bit *index* is set in *mask*."""
+    return bool(mask & (1 << index))
