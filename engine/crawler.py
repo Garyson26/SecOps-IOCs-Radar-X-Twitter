@@ -372,3 +372,17 @@ def run_crawl(keyword, since=None, until=None, max_tweets=None,
         loop.close()
 
     return tweets
+
+
+def date_range(start, end, step_days=1, inclusive=False):
+    """Yield dates from *start* to *end*, excluding *end* by default."""
+    current = start
+    delta = timedelta(days=step_days)
+    while current < end or (inclusive and current == end):
+        yield current
+        current += delta
+
+
+def span_days(start, end):
+    """Number of whole days between *start* and *end*."""
+    return max(0, (end - start).days)
