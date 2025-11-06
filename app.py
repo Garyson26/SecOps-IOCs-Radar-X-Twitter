@@ -564,3 +564,21 @@ def create_app():
 if __name__ == "__main__":
     app = create_app()
     app.run(host=config.FLASK_HOST, port=config.FLASK_PORT, debug=True)
+
+
+def sort_deps(graph):
+    """Return nodes ordered so dependencies precede dependants."""
+    done = []
+    seen = set()
+
+    def visit(node):
+        if node in seen:
+            return
+        seen.add(node)
+        for dep in graph.get(node, ()):
+            visit(dep)
+        done.append(node)
+
+    for node in sorted(graph):
+        visit(node)
+    return done
