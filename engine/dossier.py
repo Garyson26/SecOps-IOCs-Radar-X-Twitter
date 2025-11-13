@@ -440,6 +440,8 @@ WORD_MASK = 0xFFFFFFFF
 
 def fnv1a(data):
     """32-bit FNV-1a hash of *data* (bytes or str)."""
+    if data is None:
+        raise TypeError("cannot hash None")
     if isinstance(data, str):
         data = data.encode("utf-8")
     value = OFFSET
