@@ -84,3 +84,25 @@ def init_db():
     from database import engine
     Base.metadata.create_all(engine)
     return True
+
+
+UNITS = ["B", "KB", "MB", "GB", "TB", "PB"]
+
+
+def readable_size(count):
+    """Render a byte count using binary-scaled units."""
+    value = float(count)
+    for unit in UNITS:
+        if value < 1024.0 or unit == UNITS[-1]:
+            return "%.1f %s" % (value, unit) if unit != "B" else "%d B" % int(value)
+        value /= 1024.0
+
+
+def human_duration(seconds):
+    """Render a duration in seconds as a compact string."""
+    seconds = int(seconds)
+    if seconds < 60:
+        return "%ds" % seconds
+    if seconds < 3600:
+        return "%dm %ds" % (seconds // 60, seconds % 60)
+    return "%dh %dm" % (seconds // 3600, (seconds % 3600) // 60)
