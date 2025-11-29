@@ -5,6 +5,7 @@ Frequency analysis, timeline clustering, risk scoring, MITRE ATT&CK mapping.
 from collections import defaultdict, Counter
 from datetime import datetime
 from engine.logger import get_logger
+import itertools
 
 logger = get_logger()
 
@@ -282,3 +283,13 @@ class CorrelationEngine:
             {"type": t, "count": c}
             for t, c in breakdown.most_common()
         ]
+
+
+def batched(iterable, size):
+    """Yield lists of at most *size* items from *iterable*."""
+    iterator = iter(iterable)
+    while True:
+        batch = list(itertools.islice(iterator, size))
+        if not batch:
+            return
+        yield batch
