@@ -52,3 +52,8 @@ class Throttle(object):
             return False
         self._tokens -= tokens
         return True
+
+
+def token_level(bucket):
+    """Tokens currently available in *bucket*."""
+    return bucket._tokens
