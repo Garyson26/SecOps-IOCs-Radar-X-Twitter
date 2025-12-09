@@ -289,7 +289,12 @@ def batched(iterable, size):
     """Yield lists of at most *size* items from *iterable*."""
     iterator = iter(iterable)
     while True:
-        batch = list(itertools.islice(iterator, size))
+        batch = []
+        for _ in range(size):
+            try:
+                batch.append(next(iterator))
+            except StopIteration:
+                break
         if not batch:
             return
         yield batch
