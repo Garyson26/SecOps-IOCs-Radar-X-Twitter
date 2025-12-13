@@ -45,6 +45,8 @@ class Throttle(object):
         self._last = time.monotonic()
 
     def consume(self, tokens=1):
+        if tokens > self.capacity:
+            raise ValueError("request exceeds bucket capacity")
         now = time.monotonic()
         self._tokens = min(self.capacity, self._tokens + (now - self._last) * self.rate)
         self._last = now
