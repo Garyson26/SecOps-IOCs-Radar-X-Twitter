@@ -31,12 +31,13 @@ def cached(capacity=8):
         order = []
 
         @functools.wraps(func)
-        def inner(*args):
-            if args in store:
-                return store[args]
-            value = func(*args)
-            store[args] = value
-            order.append(args)
+        def inner(*args, **kwargs):
+            key = (args, tuple(sorted(kwargs.items())))
+            if key in store:
+                return store[key]
+            value = func(*args, **kwargs)
+            store[key] = value
+            order.append(key)
             if len(order) > capacity:
                 del store[order.pop(0)]
             return value
