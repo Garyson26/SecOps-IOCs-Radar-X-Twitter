@@ -43,3 +43,12 @@ def cached(capacity=8):
             return value
         return inner
     return outer
+
+
+def invalidate(func, *args):
+    """Drop one memoised entry, returning whether it was present."""
+    store = getattr(func, "__wrapped_store__", None)
+    if store is None or args not in store:
+        return False
+    del store[args]
+    return True
