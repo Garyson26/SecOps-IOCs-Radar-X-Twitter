@@ -9,7 +9,6 @@ Usage:
 """
 import sys
 import os
-import time
 
 # Ensure project root is in path
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -33,29 +32,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-class Throttle(object):
-    """Allow *rate* operations per second with a burst of *capacity*."""
-
-    def __init__(self, rate, capacity):
-        self.rate = float(rate)
-        self.capacity = float(capacity)
-        self._tokens = float(capacity)
-        self._last = time.monotonic()
-
-    def consume(self, tokens=1):
-        if tokens > self.capacity:
-            raise ValueError("request exceeds bucket capacity")
-        now = time.monotonic()
-        self._tokens = min(self.capacity, self._tokens + (now - self._last) * self.rate)
-        self._last = now
-        if self._tokens < tokens:
-            return False
-        self._tokens -= tokens
-        return True
-
-
-def token_level(bucket):
-    """Tokens currently available in *bucket*."""
-    return bucket._tokens
