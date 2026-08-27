@@ -1,0 +1,528 @@
+{
+  "homepage.title": {
+      "message": "微软零信任研讨会"
+  },
+  "homepage.description": {
+      "message": "一份全面的技术指南，帮助客户和合作伙伴基于零信任安全策略在其组织中部署和保护安全解决方案。"
+  },
+  "homepage.whatIsZt.title": {
+      "message": "什么是零信任"
+  },
+  "homepage.whatIsZt.sentence1": {
+      "message": "解决现代复杂安全挑战是困难的，但零信任安全策略提供了明确的方向。通过采用零信任安全策略，组织可以加强其安全态势，降低风险和复杂性，同时改善合规性和治理。"
+  },
+  "homepage.whatIsZt.sentence2": {
+      "message": "零信任研讨会帮助将零信任安全原则应用于微软安全。"
+  },
+  "homepage.whatIsZt.verify": {
+      "message": "始终验证"
+  },
+  "homepage.whatIsZt.leastPriv": {
+      "message": "最小权限访问"
+  },
+  "homepage.whatIsZt.assumeComp": {
+      "message": "假设被攻破"
+  },
+  "learnMore": {
+      "message": "了解更多"
+  },
+  "homepage.whyRunWorkshop.title": {
+      "message": "举办研讨会的目的"
+  },
+  "homepage.whyRunWorkshop.sentence1": {
+      "message": "零信任研讨会是微软提供的部署指南，用于在实际环境中部署零信任安全策略。"
+  },
+  "homepage.whyRunWorkshop.sentence2": {
+      "message": "基于从数千个客户实施案例中获得的知识，您可以评估当前环境并逐步检查改善端到端安全态势的具体步骤。"
+  },
+  "homepage.whyRunWorkshop.learnAboutWorkshop": {
+      "message": "了解研讨会"
+  },
+  "homepage.howRunWorkshop.title": {
+      "message": "如何举办研讨会"
+  },
+  "homepage.howRunWorkshop.sentence1": {
+      "message": "参考逐步指导，了解如何进行讨论策略和评估当前环境的会议。如果您不知道如何开始，请查看零信任研讨会的介绍视频。"
+  },
+  "homepage.howRunWorkshop.sentence2": {
+      "message": "基于从数千个客户实施案例中获得的知识，您可以评估当前环境并逐步检查改善端到端安全态势的具体步骤。"
+  },
+  "SiteHeading": {
+      "message": "微软零信任研讨会"
+  },
+  "theme.NotFound.title": {
+      "message": "页面未找到",
+      "description": "404页面的标题"
+  },
+  "theme.NotFound.p1": {
+      "message": "我们找不到您要查找的内容。",
+      "description": "404页面的第一段"
+  },
+  "theme.NotFound.p2": {
+      "message": "请联系链接您到原始URL的网站所有者，并告知他们链接已断开。",
+      "description": "404页面的第二段"
+  },
+  "theme.ErrorPageContent.title": {
+      "message": "此页面崩溃了。",
+      "description": "页面崩溃时回退页面的标题"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+      "message": "回到顶部",
+      "description": "返回顶部按钮的ARIA标签"
+  },
+  "theme.blog.archive.title": {
+      "message": "归档",
+      "description": "博客归档页面的页面和英雄标题"
+  },
+  "theme.blog.archive.description": {
+      "message": "归档",
+      "description": "博客归档页面的页面和英雄描述"
+  },
+  "theme.blog.paginator.navAriaLabel": {
+      "message": "博客列表页导航",
+      "description": "博客分页的ARIA标签"
+  },
+  "theme.blog.paginator.newerEntries": {
+      "message": "较新的条目",
+      "description": "用于导航到较新博客文章页面（上一页）的标签"
+  },
+  "theme.blog.paginator.olderEntries": {
+      "message": "较旧的条目",
+      "description": "用于导航到较旧博客文章页面（下一页）的标签"
+  },
+  "theme.blog.post.paginator.navAriaLabel": {
+      "message": "博客文章页面导航",
+      "description": "博客文章分页的ARIA标签"
+  },
+  "theme.blog.post.paginator.newerPost": {
+      "message": "较新的文章",
+      "description": "博客文章按钮标签，用于导航到较新/上一篇文章"
+  },
+  "theme.blog.post.paginator.olderPost": {
+      "message": "较旧的文章",
+      "description": "博客文章按钮标签，用于导航到较旧/下一篇文章"
+  },
+  "theme.tags.tagsPageLink": {
+      "message": "查看所有标签",
+      "description": "指向标签列表页面的链接标签"
+  },
+  "theme.colorToggle.ariaLabel": {
+      "message": "切换暗模式和亮模式（当前为{mode}）",
+      "description": "导航栏颜色模式切换的ARIA标签"
+  },
+  "theme.colorToggle.ariaLabel.mode.dark": {
+      "message": "暗模式",
+      "description": "暗色模式的名称"
+  },
+  "theme.colorToggle.ariaLabel.mode.light": {
+      "message": "亮模式",
+      "description": "亮色模式的名称"
+  },
+  "theme.docs.breadcrumbs.navAriaLabel": {
+      "message": "面包屑导航",
+      "description": "面包屑的ARIA标签"
+  },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+      "message": "1个项目|{count}个项目",
+      "description": "在生成的索引中类别卡片的默认描述，说明该类别包含多少个项目"
+  },
+  "theme.docs.paginator.navAriaLabel": {
+      "message": "文档页面",
+      "description": "文档分页的ARIA标签"
+  },
+  "theme.docs.paginator.previous": {
+      "message": "上一页",
+      "description": "用于导航到上一个文档的标签"
+  },
+  "theme.docs.paginator.next": {
+      "message": "下一页",
+      "description": "用于导航到下一个文档的标签"
+  },
+  "theme.docs.versionBadge.label": {
+      "message": "版本：{versionLabel}"
+  },
+  "theme.docs.versions.unreleasedVersionLabel": {
+      "message": "这是{siteTitle} {versionLabel}版本的未发布文档。",
+      "description": "用于告知用户他正在浏览未发布的文档版本的标签"
+  },
+  "theme.docs.versions.unmaintainedVersionLabel": {
+      "message": "这是{siteTitle} {versionLabel}的文档，该版本不再积极维护。",
+      "description": "用于告知用户他正在浏览不再维护的文档版本的标签"
+  },
+  "theme.docs.versions.latestVersionSuggestionLabel": {
+      "message": "有关最新文档，请参阅{latestVersionLink}（{versionLabel}）。",
+      "description": "用于告知用户查看最新版本的标签"
+  },
+  "theme.docs.versions.latestVersionLinkLabel": {
+      "message": "最新版本",
+      "description": "最新版本建议链接的标签"
+  },
+  "theme.docs.tagDocListPageTitle.nDocsTagged": {
+      "message": "一个文档被标记|{count}个文档被标记",
+      "description": "\"{count}个文档被标记\"的复数标签。使用与您的语言支持一样多的复数形式（由\"|\"分隔）（参见https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html）"
+  },
+  "theme.docs.tagDocListPageTitle": {
+      "message": "{nDocsTagged}为\"{tagName}\"",
+      "description": "文档标签页面的标题"
+  },
+  "theme.common.editThisPage": {
+      "message": "编辑此页",
+      "description": "编辑当前页面的链接标签"
+  },
+  "theme.lastUpdated.atDate": {
+      "message": "于{date}",
+      "description": "用于描述页面最后更新日期的词语"
+  },
+  "theme.lastUpdated.byUser": {
+      "message": "由{user}",
+      "description": "用于描述页面最后由谁更新的词语"
+  },
+  "theme.lastUpdated.lastUpdatedAtBy": {
+      "message": "最后更新{atDate}{byUser}",
+      "description": "用于显示页面最后更新时间和更新者的句子"
+  },
+  "theme.common.headingLinkTitle": {
+      "message": "{heading}的直接链接",
+      "description": "标题链接的标题"
+  },
+  "theme.navbar.mobileVersionsDropdown.label": {
+      "message": "版本",
+      "description": "移动视图中导航栏版本下拉菜单的标签"
+  },
+  "theme.tags.tagsListLabel": {
+      "message": "标签：",
+      "description": "标签列表旁边的标签"
+  },
+  "theme.admonition.caution": {
+      "message": "谨慎",
+      "description": "用于谨慎提示的默认标签 (:::caution)"
+  },
+  "theme.admonition.danger": {
+      "message": "危险",
+      "description": "用于危险提示的默认标签 (:::danger)"
+  },
+  "theme.admonition.info": {
+      "message": "信息",
+      "description": "用于信息提示的默认标签 (:::info)"
+  },
+  "theme.admonition.note": {
+      "message": "注意",
+      "description": "用于注意提示的默认标签 (:::note)"
+  },
+  "theme.admonition.tip": {
+      "message": "提示",
+      "description": "用于提示提示的默认标签 (:::tip)"
+  },
+  "theme.admonition.warning": {
+      "message": "警告",
+      "description": "用于警告提示的默认标签 (:::warning)"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+      "message": "关闭",
+      "description": "公告栏关闭按钮的ARIA标签"
+  },
+  "theme.blog.sidebar.navAriaLabel": {
+      "message": "博客最近文章导航",
+      "description": "博客侧边栏中最近文章的ARIA标签"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+      "message": "切换自动换行",
+      "description": "代码块行自动换行切换按钮的标题属性"
+  },
+  "theme.CodeBlock.copied": {
+      "message": "已复制",
+      "description": "代码块上已复制按钮的标签"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+      "message": "复制代码到剪贴板",
+      "description": "复制代码块按钮的ARIA标签"
+  },
+  "theme.CodeBlock.copy": {
+      "message": "复制",
+      "description": "代码块上复制按钮的标签"
+  },
+  "theme.DocSidebarItem.expandCategoryAriaLabel": {
+      "message": "展开侧边栏类别'{label}'",
+      "description": "展开侧边栏类别的ARIA标签"
+  },
+  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
+      "message": "折叠侧边栏类别'{label}'",
+      "description": "折叠侧边栏类别的ARIA标签"
+  },
+  "theme.navbar.mobileLanguageDropdown.label": {
+      "message": "语言",
+      "description": "移动语言切换下拉菜单的标签"
+  },
+  "theme.NavBar.navAriaLabel": {
+      "message": "主导航",
+      "description": "主导航的ARIA标签"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+      "message": "本页内容",
+      "description": "可折叠TOC组件上按钮使用的标签"
+  },
+  "theme.blog.post.readMore": {
+      "message": "阅读更多",
+      "description": "博客文章项摘要中用于链接到完整博客文章的标签"
+  },
+  "theme.blog.post.readMoreLabel": {
+      "message": "阅读更多关于{title}的内容",
+      "description": "从摘要到完整博客文章链接的ARIA标签"
+  },
+  "theme.docs.breadcrumbs.home": {
+      "message": "主页",
+      "description": "面包屑中主页的ARIA标签"
+  },
+  "theme.docs.sidebar.collapseButtonTitle": {
+      "message": "折叠侧边栏",
+      "description": "文档侧边栏折叠按钮的标题属性"
+  },
+  "theme.docs.sidebar.collapseButtonAriaLabel": {
+      "message": "折叠侧边栏",
+      "description": "文档侧边栏折叠按钮的标题属性"
+  },
+  "theme.docs.sidebar.navAriaLabel": {
+      "message": "文档侧边栏",
+      "description": "侧边栏导航的ARIA标签"
+  },
+  "theme.blog.post.readingTime.plurals": {
+      "message": "阅读需要1分钟|阅读需要{readingTime}分钟",
+      "description": "\"{readingTime}分钟阅读\"的复数标签。使用与您的语言支持一样多的复数形式（由\"|\"分隔）（参见https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html）"
+  },
+  "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
+      "message": "关闭导航栏",
+      "description": "移动侧边栏关闭按钮的ARIA标签"
+  },
+  "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
+      "message": "← 返回主菜单",
+      "description": "返回主菜单的按钮标签，位于移动导航栏侧边栏二级菜单内（特别用于显示文档侧边栏）"
+  },
+  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
+      "message": "切换导航栏",
+      "description": "移动导航汉堡菜单按钮的ARIA标签"
+  },
+  "theme.docs.sidebar.expandButtonTitle": {
+      "message": "展开侧边栏",
+      "description": "文档侧边栏展开按钮的ARIA标签和标题属性"
+  },
+  "theme.docs.sidebar.expandButtonAriaLabel": {
+      "message": "展开侧边栏",
+      "description": "文档侧边栏展开按钮的ARIA标签和标题属性"
+  },
+  "theme.blog.post.plurals": {
+      "message": "一篇文章|{count}篇文章",
+      "description": "\"{count}篇文章\"的复数标签。使用与您的语言支持一样多的复数形式（由\"|\"分隔）（参见https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html）"
+  },
+  "theme.blog.tagTitle": {
+      "message": "{nPosts}被标记为\"{tagName}\"",
+      "description": "博客标签页面的标题"
+  },
+  "theme.blog.author.pageTitle": {
+      "message": "{authorName} - {nPosts}",
+      "description": "博客作者页面的标题"
+  },
+  "theme.blog.authorsList.pageTitle": {
+      "message": "作者",
+      "description": "作者页面的标题"
+  },
+  "theme.blog.authorsList.viewAll": {
+      "message": "查看所有作者",
+      "description": "指向博客作者页面的链接标签"
+  },
+  "theme.contentVisibility.unlistedBanner.title": {
+      "message": "未列出的页面",
+      "description": "未列出内容横幅的标题"
+  },
+  "theme.contentVisibility.unlistedBanner.message": {
+      "message": "此页面未列出。搜索引擎不会索引它，只有拥有直接链接的用户才能访问它。",
+      "description": "未列出内容横幅的消息"
+  },
+  "theme.contentVisibility.draftBanner.title": {
+      "message": "草稿页面",
+      "description": "草稿内容横幅的标题"
+  },
+  "theme.contentVisibility.draftBanner.message": {
+      "message": "此页面是草稿。它只会在开发环境中可见，并会在生产构建中被排除。",
+      "description": "草稿内容横幅的消息"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+      "message": "重试",
+      "description": "React错误边界捕获错误时重新渲染的按钮标签"
+  },
+  "theme.common.skipToMainContent": {
+      "message": "跳到主要内容",
+      "description": "用于可访问性的跳到内容标签，允许通过键盘tab/enter导航快速导航到主要内容"
+  },
+  "theme.tags.tagsPageTitle": {
+      "message": "标签",
+      "description": "标签列表页面的标题"
+  },
+  "badge.new": {
+      "message": "NEW"
+  },
+  "badge.updated": {
+      "message": "已更新"
+  },
+  "hero.tagline": {
+      "message": "零信任框架中现已提供 AI 支柱"
+  },
+  "hero.title": {
+      "message": "加速您的零信任之旅"
+  },
+  "hero.subtitle": {
+      "message": "Microsoft 提供的全面框架，帮助组织采用零信任策略并端到端部署安全解决方案 — 现新增 AI 支柱，用于保护 AI 代理和 AI 资源。"
+  },
+  "hero.cta.workshop": {
+      "message": "启动研讨会"
+  },
+  "hero.cta.assessment": {
+      "message": "运行评估"
+  },
+  "ai.pill": {
+      "message": "最新动态"
+  },
+  "ai.title": {
+      "message": "在零信任中引入 AI 支柱"
+  },
+  "ai.description": {
+      "message": "随着组织采用 AI 代理和 MCP 服务器，零信任框架现包含一个专用的 AI 资源支柱和 AI 控制 — 确保您的 AI 工作负载以与环境其他部分相同的严格标准进行治理。"
+  },
+  "ai.pillarSubtitle": {
+      "message": "现支持自动生成摘要以及扩展的数据和网络安全态势检查。"
+  },
+  "pillar.identity": {
+      "message": "身份"
+  },
+  "pillar.devices": {
+      "message": "设备"
+  },
+  "pillar.data": {
+      "message": "数据"
+  },
+  "pillar.data.tooltip": {
+      "message": "新的自动评估检查"
+  },
+  "pillar.network": {
+      "message": "网络"
+  },
+  "pillar.network.tooltip": {
+      "message": "新的自动评估检查"
+  },
+  "pillar.infrastructure": {
+      "message": "基础设施"
+  },
+  "pillar.secops": {
+      "message": "安全运营"
+  },
+  "pillar.ai": {
+      "message": "AI"
+  },
+  "pillar.ai.tooltip": {
+      "message": "研讨会中的 AI 支柱"
+  },
+  "products.title": {
+      "message": "两款工具，一个使命"
+  },
+  "products.subtitle": {
+      "message": "无论您是在规划零信任路线图还是衡量当前安全态势，我们都能为您提供帮助。"
+  },
+  "products.workshop.label": {
+      "message": "交互式规划工具"
+  },
+  "products.workshop.name": {
+      "message": "零信任研讨会"
+  },
+  "products.workshop.description": {
+      "message": "一款新的 Web 应用程序，用于规划涵盖所有七个支柱（身份、设备、数据、网络、基础设施、安全运营和 AI）的零信任部署。以 First-Then 结构确定任务优先级，并生成自动摘要和实施计划。"
+  },
+  "products.workshop.tag.pillars": {
+      "message": "7 个支柱"
+  },
+  "products.workshop.tag.ai": {
+      "message": "AI 支柱"
+  },
+  "products.workshop.tag.summaries": {
+      "message": "自动摘要"
+  },
+  "products.workshop.tag.plans": {
+      "message": "实施计划"
+  },
+  "products.workshop.cta": {
+      "message": "启动研讨会"
+  },
+  "products.assessment.label": {
+      "message": "自动租户分析"
+  },
+  "products.assessment.name": {
+      "message": "零信任评估"
+  },
+  "products.assessment.description": {
+      "message": "连接到您的 Microsoft Entra 租户，获取零信任安全态势的自动评估。分析身份、设备、数据和网络支柱的配置，提供可操作的见解和可视化仪表板。"
+  },
+  "products.assessment.tag.identity": {
+      "message": "身份"
+  },
+  "products.assessment.tag.devices": {
+      "message": "设备"
+  },
+  "products.assessment.tag.data": {
+      "message": "数据"
+  },
+  "products.assessment.tag.network": {
+      "message": "网络"
+  },
+  "products.assessment.tag.checks": {
+      "message": "自动检查"
+  },
+  "products.assessment.cta": {
+      "message": "运行评估"
+  },
+  "howItWorks.title": {
+      "message": "使用方法"
+  },
+  "howItWorks.subtitle": {
+      "message": "改善组织安全态势的三个步骤。"
+  },
+  "howItWorks.step1.title": {
+      "message": "学习"
+  },
+  "howItWorks.step1.description": {
+      "message": "了解零信任原则 — 始终验证、最小权限访问和假设被攻破 — 以及它们如何应用于您的环境。"
+  },
+  "howItWorks.step1.link": {
+      "message": "探索 Microsoft 零信任"
+  },
+  "howItWorks.step2.title": {
+      "message": "规划"
+  },
+  "howItWorks.step2.description": {
+      "message": "使用研讨会构建涵盖所有支柱的具体零信任路线图。确定任务优先级并生成适合您组织的实施计划。"
+  },
+  "howItWorks.step2.link": {
+      "message": "打开研讨会"
+  },
+  "howItWorks.step3.title": {
+      "message": "评估"
+  },
+  "howItWorks.step3.description": {
+      "message": "针对您的 Microsoft Entra 租户运行评估，衡量当前安全态势，识别差距，并跟踪随时间推移的进展。"
+  },
+  "howItWorks.step3.link": {
+      "message": "运行评估"
+  },
+  "getStarted.title": {
+      "message": "准备好开始了吗？"
+  },
+  "getStarted.description": {
+      "message": "按照我们的分步计划开展零信任策略会议。无论您是 Microsoft 合作伙伴还是举办内部研讨会，本指南都将引导您完成准备、实施和后续跟进。"
+  },
+  "getStarted.cta": {
+      "message": "查看分步计划"
+  },
+  "home.layout.title": {
+      "message": "Microsoft 零信任研讨会与评估"
+  },
+  "home.layout.description": {
+      "message": "使用研讨会工具规划零信任部署，使用自动评估衡量安全态势 — 现支持新的 AI 支柱。"
+  }
+}

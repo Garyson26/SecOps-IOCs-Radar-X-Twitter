@@ -1,0 +1,259 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #4b74f0;
+  --ifm-color-primary-dark: #2e4485;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #3092fa;
+  --ifm-color-primary-dark: #2679d1;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+.button {
+  background-color: #0078d4;
+}
+
+.button--secondary {
+  background-color: #ffb900;
+}
+
+/* ───────────────────────────────────────────────────────────
+   Global hero banner styles — used by workshop.js, guide.js
+   ─────────────────────────────────────────────────────────── */
+
+.hero-banner {
+  display: flex;
+  color: #fff;
+  padding: 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 3px;
+  border: 1px solid #0078d4;
+  background: #0078d4;
+  box-shadow: 0px 0px 2px 0px rgba(23, 26, 31, 0.12), 0px 0px 1px 0px rgba(23, 26, 31, 0.07);
+}
+
+.hero-banner-guide {
+  background: #993E15;
+}
+
+.hero-content {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.hero-text {
+  padding: 0 0 0 6rem;
+  text-align: left;
+  flex: 1;
+}
+
+.hero-text h1 {
+  font-size: 34px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  color: #f7f7f7;
+  padding: 0 2rem 0 0;
+  line-height: 32px;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-image-left {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  max-width: 35vw;
+}
+
+.hero-image-left img {
+  max-width: 75%;
+  max-height: 75%;
+  object-fit: contain;
+}
+
+.hero-image img {
+  max-height: 75%;
+  max-width: 50%;
+  object-fit: contain;
+}
+
+/* ───────────────────────────────────────────────────────────
+   Layout helpers — used by various pages and components
+   ─────────────────────────────────────────────────────────── */
+
+.content-rows {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.row-section {
+  padding: 20px 0;
+}
+
+.even-row {
+  background-color: #f0f0f0;
+}
+
+.row-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.image-first .image-container,
+.text-first .image-container {
+  width: 50%;
+}
+
+.image-first .text-container,
+.text-first .text-container {
+  width: 50%;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  padding: 4rem;
+}
+
+.text-container {
+  padding: 2rem;
+}
+
+.text-container h2 {
+  margin-bottom: 2rem;
+}
+
+.text-container p {
+  font-size: large;
+}
+
+/* ─── Section / sub-section layout — used by HomepageFeatures (preview.js) ─── */
+
+.section {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.sub-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 30%;
+  padding: 20px;
+}
+
+.sub-section img {
+  align-content: center;
+}
+
+.content {
+  flex-grow: 1;
+}
+
+.content h2 {
+  text-align: center;
+  flex-grow: 1;
+}
+
+.content h3 {
+  text-align: center;
+  flex-grow: 1;
+}
+
+.content p {
+  margin-bottom: 10px;
+  font-size: large;
+}
+
+.action-button {
+  align-self: center;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: auto;
+}
+
+.video-container {
+  padding: 1rem;
+}
+
+/* ─── Responsive ─── */
+
+@media (max-width: 768px) {
+  .image-first .image-container,
+  .text-first .image-container,
+  .image-first .text-container,
+  .text-first .text-container {
+    width: 100%;
+  }
+
+  .row-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .image-first .image-container,
+  .text-first .text-container {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 968px) {
+  .section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sub-section {
+    width: 95%;
+  }
+
+  .hero-image,
+  .hero-image-left {
+    display: none;
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    max-width: 90%;
+  }
+}
